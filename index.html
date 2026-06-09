@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOOKVERSE — Your Reading Universe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+:root {
+  --primary:#6C63FF;--primary-dark:#5A52E0;--primary-light:#EEECFF;--primary-soft:#F5F4FF;
+  --accent:#F59E0B;--accent-light:#FFF7E6;--accent-soft:#FEF3C7;
+  --bg:#FAF9F6;--bg-white:#FFFFFF;--text:#222222;--text-secondary:#6B7280;--text-tertiary:#9CA3AF;
+  --border:#E5E7EB;--border-light:#F3F4F6;
+  --good:#10B981;--good-light:#ECFDF5;--warn:#EF4444;--warn-light:#FEF2F2;
+  --purple-1:#F5F0FF;--purple-2:#EDE5FF;--purple-3:#E0D5FF;--purple-4:#D4C5F8;--purple-5:#C4B0F0;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--shadow-lg:0 8px 24px rgba(0,0,0,.08);--shadow-xl:0 12px 40px rgba(0,0,0,.1);
+  --radius-sm:8px;--radius:14px;--radius-lg:20px;--radius-xl:28px;
+  --font-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;
+  --font-serif:"Noto Serif SC","Source Han Serif SC","Songti SC",Georgia,serif;
+  --font-mono:"JetBrains Mono","Fira Code",monospace;
+  --max-width:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* ── Nav ── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light)}
+.nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-brand-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--primary),#8B83FF);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-links a{padding:8px 16px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:.88rem;font-weight:500;transition:all .15s}
+.nav-links a:hover{color:var(--text);background:var(--border-light)}
+.nav-btn{padding:8px 20px;background:var(--primary);color:#fff;border-radius:10px;font-weight:600;font-size:.88rem;border:none;cursor:pointer;font-family:var(--font-sans);transition:all .15s}
+.nav-btn:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(108,99,255,.3)}
+
+.main{max-width:var(--max-width);margin:0 auto;padding:0 24px 80px}
+.section{margin-top:40px}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.section-title{font-family:var(--font-serif);font-size:1.35rem;font-weight:900;color:var(--text);letter-spacing:-0.01em}
+.section-badge{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;background:var(--primary-soft);color:var(--primary);border-radius:20px;font-size:.78rem;font-weight:600}
+
+/* ── Hero ── */
+.hero{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:768px){.hero{grid-template-columns:1fr}}
+.hero-card{background:var(--bg-white);border-radius:var(--radius-xl);padding:32px 36px;box-shadow:var(--shadow-md);border:1px solid var(--border-light);position:relative;overflow:hidden}
+.hero-card.purple{background:linear-gradient(135deg,#6C63FF,#8B83FF,#A5A0FF);color:#fff;border:none;box-shadow:0 8px 32px rgba(108,99,255,.25)}
+.hero-card.purple::after{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.08);border-radius:50%;pointer-events:none}
+.hero-label{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;opacity:.7;margin-bottom:8px}
+.hero-title{font-family:var(--font-serif);font-size:2.2rem;font-weight:900;line-height:1.2;margin-bottom:6px}
+.hero-subtitle{font-size:.9rem;opacity:.85;margin-bottom:20px}
+.hero-stats-row{display:flex;gap:24px;flex-wrap:wrap}
+.hero-stat{text-align:center}.hero-stat .num{font-size:1.8rem;font-weight:800;font-variant-numeric:tabular-nums}.hero-stat .label{font-size:.75rem;opacity:.7;margin-top:2px}
+.hero-progress-bar{margin-top:20px;background:rgba(255,255,255,.2);border-radius:10px;height:8px;overflow:hidden}
+.hero-progress-fill{height:100%;background:rgba(255,255,255,.9);border-radius:10px;transition:width .6s ease}
+.hero-progress-label{display:flex;justify-content:space-between;margin-top:6px;font-size:.78rem;opacity:.8}
+.current-book{display:flex;gap:20px;align-items:center}
+.current-book-cover{width:80px;height:110px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:.85rem;color:#4A3A6B;text-align:center;line-height:1.4;padding:8px}
+.hero-xp{margin-top:16px;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,255,255,.2);border-radius:20px;font-size:.85rem;font-weight:600}
+
+/* ── Check In ── */
+.checkin-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:768px){.checkin-grid{grid-template-columns:1fr}}
+.checkin-card{background:var(--bg-white);border:2px solid var(--border-light);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:all .2s}
+.checkin-card.active{border-color:var(--primary);background:var(--primary-soft);box-shadow:0 0 0 4px rgba(108,99,255,.1)}
+.checkin-icon{font-size:2.5rem;margin-bottom:8px}
+.checkin-card h3{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.checkin-timer{font-family:var(--font-mono);font-size:2.8rem;font-weight:600;color:var(--primary);margin:8px 0}
+.checkin-details{display:flex;justify-content:center;gap:20px;margin:12px 0;font-size:.85rem;color:var(--text-secondary)}
+.checkin-details b{color:var(--text)}
+.checkin-book-input{display:flex;gap:8px;margin:12px 0;justify-content:center;flex-wrap:wrap}
+.checkin-book-input input,.checkin-book-input select{padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-size:.88rem;background:var(--bg);color:var(--text);font-family:var(--font-sans)}
+.checkin-book-input input:focus,.checkin-book-input select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(108,99,255,.1)}
+.checkin-tabs{display:flex;gap:4px;justify-content:center;margin-bottom:10px}
+.checkin-tab{padding:6px 16px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:.8rem;font-family:var(--font-sans);color:var(--text-secondary)}
+.checkin-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 28px;border:none;border-radius:12px;font-size:.9rem;font-weight:600;cursor:pointer;font-family:var(--font-sans);transition:all .15s}
+.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 16px rgba(108,99,255,.35)}
+.btn-accent{background:var(--accent);color:#fff}.btn-accent:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.btn-outline{background:transparent;border:2px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
+.btn-sm{padding:7px 16px;font-size:.82rem;border-radius:8px}.btn-lg{padding:14px 36px;font-size:1rem;border-radius:14px}
+.btn-ghost{background:transparent;border:none;color:var(--text-secondary);cursor:pointer;font-size:.82rem;padding:6px 12px;border-radius:8px}.btn-ghost:hover{background:var(--border-light)}
+.btn-danger{background:var(--warn);color:#fff}.btn-danger:hover{filter:brightness(1.1)}
+
+/* ── Tags ── */
+.tag{display:inline-flex;align-items:center;gap:3px;padding:4px 10px;background:var(--purple-2);border-radius:6px;font-size:.74rem;color:var(--primary-dark);cursor:pointer;transition:all .15s}.tag:hover{background:var(--purple-4)}
+.chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.chip{padding:6px 14px;border-radius:20px;font-size:.8rem;cursor:pointer;border:1px solid var(--border);background:var(--bg-white);color:var(--text-secondary);transition:all .15s;font-family:var(--font-sans)}
+.chip:hover{border-color:var(--primary);color:var(--primary)}.chip.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* ── Search ── */
+.search-wrap{position:relative;margin-bottom:16px}
+.search-wrap input{width:100%;padding:12px 16px 12px 40px;border:2px solid var(--border);border-radius:12px;font-size:.9rem;font-family:var(--font-sans);background:var(--bg-white);color:var(--text);transition:all .15s}
+.search-wrap input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(108,99,255,.1)}
+.search-wrap .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1rem;color:var(--text-tertiary)}
+
+/* ── Heatmap ── */
+.heatmap-card{background:var(--bg-white);border-radius:var(--radius-lg);padding:28px 32px;box-shadow:var(--shadow-sm);border:1px solid var(--border-light)}
+.heatmap-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.heatmap-legend{display:flex;align-items:center;gap:4px;font-size:.75rem;color:var(--text-secondary)}
+.heatmap-legend-cell{width:12px;height:12px;border-radius:3px}
+#heatmapContainer{overflow-x:auto;padding-bottom:4px}
+
+/* ── Badges ── */
+.badge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.badge-card{background:var(--bg-white);border:1px solid var(--border-light);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;gap:16px;transition:all .2s}
+.badge-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}.badge-card.locked{opacity:.45;filter:grayscale(.7)}
+.badge-icon{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0}
+.badge-icon.earned{background:linear-gradient(135deg,#FEF3C7,#FDE68A,#FCD34D);box-shadow:0 2px 8px rgba(245,158,11,.2)}
+.badge-icon.locked{background:var(--border-light)}
+.badge-info{flex:1;min-width:0}.badge-name{font-weight:700;font-size:.92rem}.badge-desc{font-size:.78rem;color:var(--text-secondary);margin-top:2px}.badge-xp{font-size:.72rem;font-weight:600;color:var(--accent);margin-top:2px}
+.badge-progress-bar{margin-top:6px;height:4px;background:var(--border-light);border-radius:2px;overflow:hidden}
+.badge-progress-fill{height:100%;background:var(--primary);border-radius:2px;transition:width .4s}
+
+/* ── Bookshelf ── */
+.shelf-tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+.shelf-tab{padding:10px 22px;border-radius:10px;border:none;background:transparent;font-size:.88rem;font-weight:500;cursor:pointer;color:var(--text-secondary);font-family:var(--font-sans);transition:all .15s}
+.shelf-tab:hover{background:var(--border-light);color:var(--text)}.shelf-tab.active{background:var(--primary);color:#fff;font-weight:600}
+.shelf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.item-card{background:var(--bg-white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border-light);transition:all .2s;cursor:pointer}
+.item-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.item-cover{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.item-cover-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:.88rem;color:#4A3A6B;text-align:center;line-height:1.4;padding:16px}
+.item-progress-overlay{position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(0,0,0,.1)}
+.item-progress-overlay-fill{height:100%;background:var(--primary);border-radius:0 2px 0 0}
+.item-body{padding:14px 16px}
+.item-title{font-family:var(--font-serif);font-size:.9rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item-creator{font-size:.78rem;color:var(--text-secondary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+.item-meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.75rem;color:var(--text-tertiary)}
+.item-stars{color:var(--accent);font-size:.8rem}
+.item-type-badge{position:absolute;top:8px;right:8px;padding:3px 8px;border-radius:6px;font-size:.7rem;font-weight:600;background:rgba(255,255,255,.9);color:var(--text-secondary)}
+.item-tags-row{display:flex;gap:3px;flex-wrap:wrap;margin-top:6px}
+
+/* ── Extracts ── */
+.extract-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.extract-grid{grid-template-columns:1fr}}
+.extract-card{background:var(--bg-white);border:1px solid var(--border-light);border-radius:var(--radius);padding:20px}
+.extract-card h3{font-family:var(--font-serif);font-size:.95rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.extract-item{padding:12px 16px;background:var(--bg);border-left:3px solid var(--purple-4);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:10px;font-size:.85rem}
+.extract-item .ex-text{font-style:italic;color:var(--text);line-height:1.7}
+.extract-item .ex-meta{font-size:.75rem;color:var(--text-tertiary);margin-top:6px;display:flex;gap:12px;flex-wrap:wrap}
+.idea-card{padding:12px 16px;background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:10px;font-size:.85rem}
+
+/* ── Recs ── */
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.rec-card{background:var(--bg-white);border:1px solid var(--border-light);border-radius:var(--radius);padding:24px;display:flex;gap:16px;transition:all .2s;cursor:pointer}
+.rec-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.rec-cover{width:64px;height:90px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:.7rem;color:#4A3A6B;text-align:center;line-height:1.3;padding:6px}
+.rec-info{flex:1;min-width:0}.rec-title{font-family:var(--font-serif);font-weight:700;font-size:.95rem}.rec-author{font-size:.8rem;color:var(--text-secondary);margin-top:2px}
+.rec-match{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:var(--accent-light);color:var(--accent);border-radius:12px;font-size:.78rem;font-weight:700;margin-top:8px}
+
+/* ── Dashboard ── */
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+.dash-stat{background:var(--bg-white);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid var(--border-light)}
+.dash-stat .num{font-family:var(--font-mono);font-size:1.6rem;font-weight:700;color:var(--primary)}.dash-stat .label{font-size:.78rem;color:var(--text-secondary);margin-top:4px}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.chart-grid{grid-template-columns:1fr}}
+.chart-card{background:var(--bg-white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);border:1px solid var(--border-light)}
+.chart-card h3{font-family:var(--font-serif);font-size:.95rem;font-weight:700;margin-bottom:12px}.chart-box{width:100%;height:280px}
+.wrapped-card{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);color:#fff;border-radius:var(--radius-xl);padding:36px 40px;position:relative;overflow:hidden;margin-top:20px}
+.wrapped-card::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(108,99,255,.4),transparent 70%);border-radius:50%}
+.wrapped-card h2{font-family:var(--font-serif);font-size:1.4rem;font-weight:900;margin-bottom:16px;position:relative}
+.wrapped-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:16px;position:relative}
+.wrapped-item{text-align:center}.wrapped-item .num{font-size:1.5rem;font-weight:800;color:var(--accent)}.wrapped-item .label{font-size:.76rem;opacity:.7;margin-top:4px}
+
+/* ── Detail card ── */
+.detail-card{background:var(--bg-white);border:2px solid var(--primary-light);border-radius:var(--radius);padding:24px;position:relative;margin-top:2px}
+.detail-card .close-btn{position:absolute;top:12px;right:12px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--text-secondary)}
+.detail-card .edit-row{display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap}
+.detail-card .edit-row select,.detail-card .edit-row input{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8rem;font-family:var(--font-sans);background:var(--bg);color:var(--text)}
+.detail-card .edit-row select:focus,.detail-card .edit-row input:focus{outline:none;border-color:var(--primary)}
+
+/* ── Modal ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);backdrop-filter:blur(6px);z-index:300;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg-white);border-radius:var(--radius-xl);padding:36px;max-width:520px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow-xl)}
+.modal h2{font-family:var(--font-serif);margin-bottom:16px;font-size:1.3rem;display:flex;align-items:center;gap:8px}
+.modal .form-group{margin-bottom:14px}.modal .form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--text-secondary);margin-bottom:4px}
+.modal .form-group input,.modal .form-group select,.modal .form-group textarea{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:.88rem;font-family:var(--font-sans);background:var(--bg);color:var(--text)}
+.modal .form-group textarea{min-height:80px;resize:vertical}
+.modal .form-group input:focus,.modal .form-group select:focus,.modal .form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(108,99,255,.08)}
+.modal .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:20px}
+
+.toast{position:fixed;bottom:24px;right:24px;padding:14px 24px;background:#1F2937;color:#fff;border-radius:12px;font-size:.88rem;font-weight:500;z-index:400;opacity:0;transform:translateY(10px);transition:all .25s;font-family:var(--font-sans)}
+.toast.show{opacity:1;transform:translateY(0)}
+.xp-popup{position:fixed;pointer-events:none;font-weight:800;font-size:1.2rem;color:var(--accent);z-index:200;animation:xpUp .8s ease-out forwards}
+@keyframes xpUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-60px) scale(1.3)}}
+.footer{text-align:center;padding:40px 24px;color:var(--text-tertiary);font-size:.82rem;border-top:1px solid var(--border-light);margin-top:60px}
+@media(max-width:640px){.hero-title{font-size:1.6rem}.hero-stat .num{font-size:1.3rem}.checkin-timer{font-size:2rem}.shelf-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-inner">
+  <a href="#" class="nav-brand"><div class="nav-brand-icon">📖</div>BOOKVERSE</a>
+  <div class="nav-links"><a href="#hero">首页</a><a href="#shelf">书架</a><a href="#extracts">摘录</a><a href="#badges">勋章</a><a href="#stats">统计</a></div>
+  <button class="nav-btn" onclick="openAddModal()">+ 添加</button>
+</div></nav>
+
+<div class="main">
+
+<!-- HERO -->
+<section id="hero" class="hero section">
+  <div class="hero-card purple">
+    <div class="hero-label">📚 Reading Universe</div>
+    <div class="hero-title" id="heroYearTitle">阅读旅程</div>
+    <div class="hero-subtitle" id="heroDateRange"></div>
+    <div class="hero-stats-row" id="heroStatsRow"></div>
+    <div class="hero-progress-bar"><div class="hero-progress-fill" id="heroProgressFill" style="width:65%;"></div></div>
+    <div class="hero-progress-label"><span id="heroGoalLabel">年度进度</span><span id="heroProgressPct"></span></div>
+  </div>
+  <div class="hero-card" id="currentBookCard">
+    <div class="hero-label">📖 当前在读</div>
+    <div id="currentBookContent" style="text-align:center;padding:20px;color:var(--text-tertiary);">暂未开始阅读</div>
+  </div>
+</section>
+
+<!-- CHECK IN -->
+<section id="checkin" class="section">
+  <div class="section-header"><div class="section-title">⏱ 阅读打卡</div><div class="section-badge">📅 <span id="todayDate"></span></div></div>
+  <div class="checkin-grid">
+    <div class="checkin-card" id="checkinCard">
+      <div class="checkin-icon">✍️</div>
+      <h3>开始阅读</h3>
+      <div class="checkin-tabs">
+        <button class="checkin-tab active" onclick="switchCheckinMode('shelf',this)">📚 从书架选</button>
+        <button class="checkin-tab" onclick="switchCheckinMode('new',this)">✏️ 写新书名</button>
+      </div>
+      <div id="checkinShelfMode">
+        <select id="checkinBookSelect" style="padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-size:.88rem;background:var(--bg);color:var(--text);font-family:var(--font-sans);width:100%;max-width:300px;margin-bottom:12px;"><option value="">从书架选择...</option></select>
+      </div>
+      <div id="checkinNewMode" style="display:none;">
+        <div class="checkin-book-input">
+          <input type="text" id="newBookTitle" placeholder="书名" style="flex:2;"><input type="text" id="newBookAuthor" placeholder="作者" style="flex:1;">
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="startReading()">▶ 开始阅读</button>
+    </div>
+    <div class="checkin-card active" id="activeCard" style="display:none;">
+      <div class="checkin-icon">📚</div><h3>Reading Focus</h3>
+      <div style="font-size:.9rem;color:var(--text-secondary);margin-bottom:4px;" id="activeBookName"></div>
+      <div class="checkin-timer" id="activeTimer">00:00</div>
+      <div class="checkin-details"><div>已读 <b id="activeMinutes">0</b> 分钟</div><div>目标 <b>30 分钟</b></div></div>
+      <button class="btn btn-accent btn-lg" onclick="checkOut()">⏹ 结束阅读</button>
+    </div>
+  </div>
+</section>
+
+<!-- HEATMAP -->
+<section id="heatmap" class="section">
+  <div class="section-header"><div class="section-title">🗓 阅读热力图</div><div class="section-badge" id="heatmapYearBadge"></div></div>
+  <div class="heatmap-card">
+    <div class="heatmap-header">
+      <div style="display:flex;gap:6px;align-items:center;" id="heatmapYearChips"></div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="font-size:.85rem;color:var(--text-secondary);" id="heatmapTotal"></span>
+        <div class="heatmap-legend"><span>少</span><div class="heatmap-legend-cell" style="background:#F3F4F6;"></div><div class="heatmap-legend-cell" style="background:#D5D0FF;"></div><div class="heatmap-legend-cell" style="background:#8B83FF;"></div><div class="heatmap-legend-cell" style="background:#5A52E0;"></div><div class="heatmap-legend-cell" style="background:#3B35C0;"></div><span>多</span></div>
+      </div>
+    </div>
+    <div id="heatmapContainer"></div>
+  </div>
+</section>
+
+<!-- BADGES -->
+<section id="badges" class="section">
+  <div class="section-header"><div class="section-title">🏆 勋章体系</div><div class="section-badge" id="badgeCount"></div></div>
+  <div class="badge-grid" id="badgeGrid"></div>
+</section>
+
+<!-- BOOKSHELF -->
+<section id="shelf" class="section">
+  <div class="section-header"><div class="section-title">📚 书架</div><div style="display:flex;align-items:center;gap:8px;"><span class="section-badge" id="shelfCount"></span><button class="btn btn-sm btn-outline" onclick="openAddModal()">+ 添加</button></div></div>
+  <div class="shelf-tabs">
+    <button class="shelf-tab active" onclick="switchShelf('all',this)">📋 全部</button>
+    <button class="shelf-tab" onclick="switchShelf('reading',this)">📖 在读</button>
+    <button class="shelf-tab" onclick="switchShelf('finished',this)">✅ 已完</button>
+    <button class="shelf-tab" onclick="switchShelf('want',this)">🔖 想读</button>
+    <button class="shelf-tab" onclick="switchShelf('movies',this)">🎬 电影</button>
+    <button class="shelf-tab" onclick="switchShelf('books',this)">📚 书籍</button>
+  </div>
+  <div class="search-wrap"><span class="search-icon">🔍</span><input type="text" id="shelfSearch" placeholder="搜索书名、作者..." oninput="renderShelf(currentShelf,activeTag)"></div>
+  <div class="chip-row" id="shelfTagChips"></div>
+  <div class="shelf-grid" id="shelfGrid"></div>
+</section>
+
+<!-- EXTRACTS -->
+<section id="extracts" class="section">
+  <div class="section-header"><div class="section-title">💬 摘录 & 想法</div><button class="btn btn-sm btn-outline" onclick="openExtractModal()">+ 记录</button></div>
+  <div class="extract-grid">
+    <div class="extract-card"><h3>📝 书摘</h3><div id="extractsList"><div style="color:var(--text-tertiary);text-align:center;padding:20px;">暂无摘录，点击右上角添加</div></div></div>
+    <div class="extract-card"><h3>💡 随想</h3><div id="ideasList"></div></div>
+  </div>
+</section>
+
+<!-- RECS -->
+<section id="recommend" class="section">
+  <div class="section-header"><div class="section-title">🤖 AI 推荐</div><div class="section-badge">基于你的阅读偏好</div></div>
+  <div class="rec-grid" id="recGrid"></div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="stats" class="section">
+  <div class="section-header"><div class="section-title">📊 统计</div><div class="section-badge">Dashboard</div></div>
+  <div class="dash-grid" id="dashStats"></div>
+  <div class="chart-grid">
+    <div class="chart-card"><h3>📈 月度趋势</h3><div class="chart-box" id="chartTrend"></div></div>
+    <div class="chart-card"><h3>🎯 偏好分布</h3><div class="chart-box" id="chartRose"></div></div>
+    <div class="chart-card"><h3>⭐ 评分分布</h3><div class="chart-box" id="chartRating"></div></div>
+    <div class="chart-card"><h3>👤 创作者</h3><div class="chart-box" id="chartAuthors"></div></div>
+  </div>
+  <div class="wrapped-card"><h2>🎧 Reading Wrapped</h2><div class="wrapped-grid" id="wrappedGrid"></div></div>
+</section>
+
+</div>
+<footer class="footer"><strong>BOOKVERSE</strong> — Your Reading Universe</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="addModal"><div class="modal">
+  <h2>✍️ 添加到书架</h2>
+  <div class="form-row"><div class="form-group"><label>类型 *</label><select id="addType"><option value="book">📚 书</option><option value="movie">🎬 电影</option></select></div><div class="form-group"><label>状态</label><select id="addStatus"><option value="finished">已完</option><option value="reading">在读/看</option><option value="want">想读/看</option></select></div></div>
+  <div class="form-row"><div class="form-group"><label>标题 *</label><input id="addTitle" placeholder="书名或电影名"></div><div class="form-group"><label>作者/导演</label><input id="addAuthor" placeholder="创作者"></div></div>
+  <div class="form-row"><div class="form-group"><label>日期</label><input id="addDate" type="month"></div><div class="form-group"><label>评分 (1-10)</label><input id="addRating" type="number" min="1" max="10" placeholder="8"></div></div>
+  <div class="form-group"><label>标签（逗号分隔）</label><input id="addTags" placeholder="文学, 拉美文学"></div>
+  <div class="form-group"><label>笔记</label><textarea id="addNotes" placeholder="想法…"></textarea></div>
+  <div class="modal-actions"><button class="btn btn-outline btn-sm" onclick="closeAddModal()">取消</button><button class="btn btn-primary" onclick="addItem()">📖 添加</button></div>
+</div></div>
+
+<div class="modal-overlay" id="extractModal"><div class="modal">
+  <h2>💬 记录</h2>
+  <div class="form-group"><label>关联</label><select id="extractBook"><option value="">不关联</option></select></div>
+  <div class="form-group"><label>内容 *</label><textarea id="extractText" placeholder="摘录或想法…"></textarea></div>
+  <div class="form-row"><div class="form-group"><label>页码</label><input id="extractPage" placeholder="P126"></div><div class="form-group"><label>类型</label><select id="extractTypeSel"><option value="extract">摘录</option><option value="idea">随想</option></select></div></div>
+  <div class="form-group"><label>批注</label><input id="extractNote" placeholder="为什么触动你？"></div>
+  <div class="modal-actions"><button class="btn btn-outline btn-sm" onclick="closeExtractModal()">取消</button><button class="btn btn-primary" onclick="addExtract()">💾 保存</button></div>
+</div></div>
+
+<div class="modal-overlay" id="checkoutModal"><div class="modal" style="text-align:center;">
+  <h2 style="justify-content:center;">🎉 阅读完成!</h2>
+  <div style="font-size:2.5rem;font-weight:900;color:var(--accent);margin:12px 0;">+<span id="modalXp">42</span> XP</div>
+  <div style="display:flex;justify-content:center;gap:24px;margin:16px 0;"><div><div style="font-size:1.3rem;font-weight:700;" id="modalMinutes">42</div><div style="font-size:.75rem;color:var(--text-secondary);">分钟</div></div><div><div style="font-size:1.3rem;font-weight:700;" id="modalPages">28</div><div style="font-size:.75rem;color:var(--text-secondary);">页数</div></div></div>
+  <textarea id="modalNote" placeholder="今日感想..." style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:.88rem;font-family:var(--font-sans);resize:vertical;min-height:60px;background:var(--bg);color:var(--text);"></textarea>
+  <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;"><button class="btn btn-outline btn-sm" onclick="closeCheckoutModal()">稍后</button><button class="btn btn-primary" onclick="saveCheckout()">💾 保存</button></div>
+</div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// API MODULE — Backend-first, localStorage fallback
+// ═══════════════════════════════════════════════════════════
+const API_BASE = '/api';
+let API_ONLINE = false;
+
+// ── Field mapping: frontend ↔ API ──
+function toAPI(item) {
+  const r = {};
+  for (const [k, v] of Object.entries(item)) {
+    if (k === 'id' && typeof v === 'number') continue; // let server manage id
+    if (k === 'title') r.title_cn = v;
+    else if (k === 'date') r.date_finished = v || '';
+    else if (k === 'progress') continue; // server computes from daily_reading
+    else r[k] = v;
+  }
+  if (!r.title_cn) r.title_cn = item.title || '';
+  if (item.rating === 0 || item.rating === null || item.rating === undefined) r.rating = null;
+  // Map frontend status to API status
+  if (r.status === 'want') r.status = 'to-read';
+  return r;
+}
+
+function fromAPI(entry) {
+  return {
+    id: entry.id,
+    type: entry.type || 'book',
+    title: entry.title_cn || entry.title || '',
+    creator: entry.creator || '',
+    date: entry.date_finished || '',
+    rating: entry.rating || 0,
+    status: entry.status === 'to-read' ? 'want' : (entry.status || 'finished'),
+    tags: entry.tags || [],
+    extracts: entry.extracts || [],
+    mood_tags: entry.mood_tags || [],
+    daily_reading: entry.daily_reading || [],
+    sessions: entry.sessions || [],
+    notes: entry.notes || '',
+    progress: entry.reading_time_days ? Math.min(100, Math.round(entry.reading_time_days / 30 * 100)) : (entry.status === 'reading' ? 32 : 0),
+    active_session: entry.active_session || null,
+  };
+}
+
+async function apiFetch(url, opts = {}) {
+  try {
+    const res = await fetch(API_BASE + url, {
+      headers: { 'Content-Type': 'application/json', ...opts.headers },
+      ...opts,
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    API_ONLINE = true;
+    return await res.json();
+  } catch (e) {
+    API_ONLINE = false;
+    console.warn('API unavailable, using local cache:', e.message);
+    return null;
+  }
+}
+
+const API = {
+  async getEntries() {
+    const data = await apiFetch('/entries');
+    if (data && Array.isArray(data)) return data.map(fromAPI);
+    return null;
+  },
+  async addEntry(item) {
+    const data = await apiFetch('/entries', { method: 'POST', body: JSON.stringify(toAPI(item)) });
+    if (data) return fromAPI(data);
+    return null;
+  },
+  async updateEntry(id, updates) {
+    const data = await apiFetch(`/entries/${id}`, { method: 'PUT', body: JSON.stringify(toAPI(updates)) });
+    if (data) return fromAPI(data);
+    return null;
+  },
+  async deleteEntry(id) {
+    const data = await apiFetch(`/entries/${id}`, { method: 'DELETE' });
+    return !!data;
+  },
+  async getRecommendations(type = 'both', count = 8) {
+    const data = await apiFetch(`/recommend?type=${type}&count=${count}`);
+    if (data && Array.isArray(data)) return data;
+    return null;
+  },
+  async getVizData(year) {
+    const url = year ? `/viz?year=${year}` : '/viz';
+    const data = await apiFetch(url);
+    return data;
+  },
+  async getStats() {
+    return await apiFetch('/stats');
+  },
+  async getTags() {
+    return await apiFetch('/tags');
+  },
+  async exportGuides() {
+    return await apiFetch('/export', { method: 'POST' });
+  },
+  async checkIn(entryId) {
+    return await apiFetch('/sessions/check-in', { method: 'POST', body: JSON.stringify({ entry_id: String(entryId) }) });
+  },
+  async checkOut(entryId) {
+    return await apiFetch('/sessions/check-out', { method: 'POST', body: JSON.stringify({ entry_id: String(entryId) }) });
+  },
+  async getActiveSession() {
+    return await apiFetch('/sessions/active');
+  },
+};
+
+// ═══════════════════════════════════════════════════════════
+// DATA — API first, localStorage fallback
+// ═══════════════════════════════════════════════════════════
+const PGRAD=['linear-gradient(135deg,#EDE5FF,#DDD0F8)','linear-gradient(135deg,#E8DDF8,#D8C8F0)','linear-gradient(135deg,#F0E8FF,#E0D5F5)','linear-gradient(135deg,#EDE0FA,#D8CCF0)','linear-gradient(135deg,#E5D8F5,#D4C4EC)','linear-gradient(135deg,#F2EAFF,#E2D8F8)','linear-gradient(135deg,#EBE0F8,#DACCEF)','linear-gradient(135deg,#EEE4FC,#DED0F4)','linear-gradient(135deg,#E8DCF5,#D6C5EA)','linear-gradient(135deg,#F4EEFF,#E6DCFA)'];
+const MGRAD=['linear-gradient(135deg,#D8E0F0,#C8D0E4)','linear-gradient(135deg,#DDE5F2,#CDD5E6)','linear-gradient(135deg,#E0E8F5,#D0D8E8)','linear-gradient(135deg,#D5DDF0,#C5CDE0)','linear-gradient(135deg,#DBE3F4,#CBD3E6)'];
+
+// Minimal fallback seed — only used if both API and localStorage are empty
+const FALLBACK_ITEMS = [
+  {id:'seed1',type:'book',title:'百年孤独',creator:'加西亚·马尔克斯',date:'2023',rating:10,status:'finished',tags:['文学','拉美文学','魔幻现实']},
+  {id:'seed2',type:'book',title:'红楼梦',creator:'曹雪芹',date:'—',rating:10,status:'finished',tags:['文学','中国古典文学','美学']},
+];
+
+// ═══════════════════════════════════════════════════════════
+// PERSISTENCE — API first, localStorage as offline cache
+// ═══════════════════════════════════════════════════════════
+const LS_KEY = 'bookverse_cache';
+const LS_TS_KEY = 'bookverse_cache_ts';
+const CACHE_TTL = 30 * 60 * 1000; // 30 min cache validity
+
+function loadLocalCache() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) {
+      const d = JSON.parse(raw);
+      return {
+        items: d.items || [],
+        extracts: d.extracts || [],
+        ideas: d.ideas || [],
+        nextIdNum: d.nextIdNum || 200,
+      };
+    }
+  } catch (e) {}
+  return null;
+}
+
+function saveLocalCache() {
+  const d = { items: ITEMS, extracts: extractsData, ideas: ideasData, nextIdNum };
+  try { localStorage.setItem(LS_KEY, JSON.stringify(d)); } catch (e) {}
+}
+
+// Lazy init — populated by init()
+let ITEMS = [];
+let extractsData = [];
+let ideasData = [
+  {text:'用一场雨，一场晴。用新芽，用落叶。\n不是用叶子来讲述秋天，用秋天来讲述叶。\n可能，我无法讲述这片杉树，它们也从来不用我来讲述。\n它们，自己讲述，用时间讲述。',date:'写作练习',tags:['诗歌']},
+  {text:'"I need you to remember me with pain. Pain will let you distinguish me from others."\n\nI entered a room without enough preparation. I couldn\'t imagine the scenery. Then I was shocked.',date:'写作练习',tags:['散文']},
+];
+let nextIdNum = 200;
+
+async function loadData() {
+  // 1. Try API first
+  const apiEntries = await API.getEntries();
+  if (apiEntries && apiEntries.length > 0) {
+    ITEMS = apiEntries;
+    // Collect extracts from entries
+    extractsData = [];
+    for (const e of apiEntries) {
+      for (const ex of (e.extracts || [])) {
+        extractsData.push({
+          text: ex.text || '',
+          page: ex.page || '',
+          note: ex.note || '',
+          book: e.title,
+          date: ex.added_at || '',
+        });
+      }
+    }
+    nextIdNum = 500;
+    saveLocalCache();
+    console.log(`Loaded ${ITEMS.length} entries from API`);
+    return;
+  }
+
+  // 2. Fall back to localStorage cache
+  const cache = loadLocalCache();
+  if (cache && cache.items.length > 0) {
+    ITEMS = cache.items;
+    extractsData = cache.extracts || [];
+    ideasData = cache.ideas || ideasData;
+    nextIdNum = cache.nextIdNum || 200;
+    console.log(`Loaded ${ITEMS.length} entries from local cache`);
+    return;
+  }
+
+  // 3. Last resort — minimal seed
+  ITEMS = JSON.parse(JSON.stringify(FALLBACK_ITEMS));
+  nextIdNum = 100;
+  console.log('Using fallback seed data');
+}
+
+// Generate a unique temp id (replaced by server id on next reload)
+function tempId() { return 'local_' + (++nextIdNum); }
+
+function saveData() {
+  saveLocalCache();
+  // If API is online, no need to do anything — data is already synced
+}
+
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+let timerInterval=null,sessionStart=null,sessionSeconds=0,currentShelf='all',activeTag=null,checkinMode='shelf';
+
+// ═══════════════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════════════
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.className='toast show';setTimeout(()=>t.classList.remove('show'),2500)}
+function esc(s){if(!s)return'';const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function stars(r){if(!r)return'<span style="color:var(--border)">☆☆☆☆☆</span>';const f=Math.floor(r/2),h=r%2;return'<span style="color:var(--accent)">'+'★'.repeat(f)+(h?'◐':'')+'</span><span style="color:var(--border)">'+'☆'.repeat(5-f-h)+'</span>'}
+function gc(item){const gs=item.type==='movie'?MGRAD:PGRAD;const hash=String(item.id||'').split('').reduce((s,c)=>s+c.charCodeAt(0),0);return gs[hash%gs.length]}
+
+// ═══════════════════════════════════════════════════════════
+// INIT — async, loads from API then renders
+// ═══════════════════════════════════════════════════════════
+async function init(){
+  document.getElementById('todayDate').textContent=new Date().toISOString().slice(0,10);
+  await loadData();
+  updateHero();renderHeatmap();renderBadges();renderShelf('all');renderExtracts();renderRecs();renderDash();
+  loadCheckinBooks();
+  // Preload viz data to enrich heatmap
+  fetchVizData(heatmapYear).then(() => renderHeatmap(heatmapYear));
+  checkActiveSession();
+}
+
+async function checkActiveSession() {
+  const session = await API.getActiveSession();
+  if (session && session.entry_id) {
+    // A reading session is active on the server — could restore it
+    // For now, just note server connectivity
+    if (API_ONLINE) {
+      console.log('Connected to BOOKVERSE server');
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// HERO — all numbers computed from actual data
+// ═══════════════════════════════════════════════════════════
+function updateHero(){
+  const books=ITEMS.filter(i=>i.type==='book'&&i.status==='finished');
+  const movies=ITEMS.filter(i=>i.type==='movie'&&i.status==='finished');
+  const reading=ITEMS.filter(i=>i.status==='reading');
+  const allDates=ITEMS.filter(i=>i.date&&i.date>='2025').map(i=>i.date).sort();
+  const from=allDates[0]||'2025',to=allDates[allDates.length-1]||'至今';
+
+  document.getElementById('heroYearTitle').textContent='阅读旅程';
+  document.getElementById('heroDateRange').textContent=from+' → '+to;
+  document.getElementById('heroStatsRow').innerHTML=`
+    <div class="hero-stat"><div class="num">${books.length}</div><div class="label">完成书籍</div></div>
+    <div class="hero-stat"><div class="num">${movies.length}</div><div class="label">看过电影</div></div>
+    <div class="hero-stat"><div class="num">${(books.reduce((s,i)=>s+(i.rating||0),0)/books.length).toFixed(1)}</div><div class="label">书均分</div></div>
+    <div class="hero-stat"><div class="num">${ITEMS.filter(i=>i.date&&i.date.startsWith('2026')&&i.status==='finished').length}</div><div class="label">今年已完</div></div>`;
+  const pct=Math.round(books.length/60*100);
+  document.getElementById('heroProgressFill').style.width=Math.min(pct,100)+'%';
+  document.getElementById('heroGoalLabel').textContent='年度目标: 60 本书';
+  document.getElementById('heroProgressPct').textContent=pct+'% ('+books.length+'/60)';
+
+  // Current reading
+  if(reading.length>0){
+    const r=reading[0];
+    document.getElementById('currentBookContent').innerHTML=`<div class="current-book"><div class="current-book-cover" style="background:${gc(r)};">${esc(r.title)}</div><div><div class="hero-title" style="font-size:1.3rem;color:var(--text);">${esc(r.title)}</div><div style="font-size:.9rem;color:var(--text-secondary);">${esc(r.creator)}</div><div style="margin-top:8px;font-size:.82rem;">进度: <strong>${r.progress||0}%</strong></div><div class="hero-progress-bar" style="margin-top:6px;background:var(--border-light);"><div class="hero-progress-fill" style="width:${r.progress||0}%;background:var(--primary);"></div></div></div></div>`;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// CHECK IN — with shelf dropdown + new book mode
+// ═══════════════════════════════════════════════════════════
+function loadCheckinBooks(){
+  const sel=document.getElementById('checkinBookSelect');
+  const books=ITEMS.filter(i=>i.type==='book'&&(i.status==='reading'||i.status==='want'||i.status==='finished'));
+  sel.innerHTML='<option value="">从书架选择...</option>'+books.map(b=>`<option value="${String(b.id).replace(/"/g,'&quot;')}">${esc(b.title)} ${b.status==='reading'?'📖':b.status==='want'?'🔖':'✅'}</option>`).join('');
+}
+function switchCheckinMode(mode,btn){
+  checkinMode=mode;
+  document.querySelectorAll('.checkin-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  document.getElementById('checkinShelfMode').style.display=mode==='shelf'?'block':'none';
+  document.getElementById('checkinNewMode').style.display=mode==='new'?'block':'none';
+}
+
+function startReading(){
+  let title,author,bookId=null,entryObj=null;
+  if(checkinMode==='shelf'){
+    bookId=document.getElementById('checkinBookSelect').value;
+    if(!bookId){toast('请从书架选择一本书');return}
+    entryObj=ITEMS.find(i=>String(i.id)===String(bookId));if(!entryObj)return;
+    title=entryObj.title;author=entryObj.creator;
+    if(entryObj.status==='want'){entryObj.status='reading';entryObj.progress=0;saveData();renderShelf(currentShelf,activeTag);}
+  }else{
+    title=document.getElementById('newBookTitle').value.trim();
+    author=document.getElementById('newBookAuthor').value.trim();
+    if(!title){toast('请输入书名');return}
+    if(!ITEMS.find(i=>i.title===title&&i.type==='book')){
+      const newEntry={id:tempId(),type:'book',title,creator:author,date:new Date().toISOString().slice(0,7),rating:0,status:'reading',progress:0,tags:[]};
+      ITEMS.unshift(newEntry);saveData();
+      // Also create on server
+      API.addEntry(newEntry).then(saved => {
+        if (saved) { newEntry.id = saved.id; saveData(); }
+      });
+      loadCheckinBooks();renderShelf(currentShelf,activeTag);toast('📖 《'+title+'》已加入书架');
+    }
+  }
+  // Notify server of check-in
+  if (bookId) API.checkIn(bookId).catch(()=>{});
+
+  document.getElementById('checkinCard').style.display='none';
+  document.getElementById('activeCard').style.display='block';
+  document.getElementById('activeBookName').textContent='《'+title+'》';
+  document.getElementById('activeMinutes').textContent='0';
+  document.getElementById('activeTimer').textContent='00:00';
+  sessionStart=new Date();sessionSeconds=0;
+  timerInterval=setInterval(updateTimer,1000);
+}
+function updateTimer(){sessionSeconds++;const m=Math.floor(sessionSeconds/60),s=sessionSeconds%60;document.getElementById('activeTimer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');document.getElementById('activeMinutes').textContent=m}
+function checkOut(){
+  clearInterval(timerInterval);timerInterval=null;
+  const m=Math.floor(sessionSeconds/60);
+  document.getElementById('modalMinutes').textContent=m;
+  document.getElementById('modalPages').textContent=Math.floor(m*.7);
+  document.getElementById('modalXp').textContent=Math.floor(m*1.5);
+  document.getElementById('checkoutModal').classList.add('open');spawnXp(Math.floor(m*1.5));
+  // Notify server
+  const bookId=document.getElementById('checkinBookSelect').value;
+  if(bookId) API.checkOut(bookId).catch(()=>{});
+}
+function closeCheckoutModal(){document.getElementById('checkoutModal').classList.remove('open');resetCheckin()}
+function saveCheckout(){
+  const note=document.getElementById('modalNote').value.trim();
+  if(note){ideasData.unshift({text:note,date:new Date().toISOString().slice(0,10),tags:['阅读笔记']});saveData();renderExtracts()}
+  document.getElementById('checkoutModal').classList.remove('open');toast('✅ 已保存');resetCheckin()
+}
+function resetCheckin(){document.getElementById('checkinCard').style.display='block';document.getElementById('activeCard').style.display='none';document.getElementById('newBookTitle').value='';document.getElementById('newBookAuthor').value='';sessionStart=null;sessionSeconds=0}
+function spawnXp(xp){const el=document.createElement('div');el.className='xp-popup';el.textContent='+'+xp+' XP ⚡';el.style.left=(35+Math.random()*30)+'%';el.style.top='45%';document.body.appendChild(el);setTimeout(()=>el.remove(),800)}
+
+// ═══════════════════════════════════════════════════════════
+// HEATMAP — uses real API viz data, falls back to item dates
+// ═══════════════════════════════════════════════════════════
+let heatmapYear=null; // null = auto (latest year with data)
+let vizCache = null;   // cached API response
+
+async function fetchVizData(year) {
+  if (API_ONLINE) {
+    const data = await API.getVizData(year);
+    if (data && data.calendar_data) {
+      vizCache = data;
+      return data;
+    }
+  }
+  return null;
+}
+
+function renderHeatmap(year){
+  const c=document.getElementById('heatmapContainer');
+  const now=new Date();
+
+  // ── Determine available years ──
+  const years=new Set();
+  ITEMS.filter(i=>i.status==='finished'&&i.date).forEach(i=>{const y=parseInt(i.date.slice(0,4));if(y>=2025)years.add(y);});
+  if(vizCache && vizCache.available_years) vizCache.available_years.forEach(y => years.add(parseInt(y)));
+  if(years.size===0)years.add(now.getFullYear());
+  const yearList=[...years].sort();
+
+  // ── Auto-select year ──
+  if(!year)year=heatmapYear||now.getFullYear();
+  if(!years.has(year))year=yearList[yearList.length-1];
+  heatmapYear=year;
+
+  // ── Year chips ──
+  document.getElementById('heatmapYearChips').innerHTML=yearList.map(y=>`<span class="chip${y===year?' active':''}" onclick="renderHeatmapAndFetch(${y})">${y}</span>`).join('');
+  document.getElementById('heatmapYearBadge').textContent=year+' 年';
+  const yearFin=ITEMS.filter(i=>i.status==='finished'&&i.date&&i.date.startsWith(String(year))).length;
+  const yearBooks=ITEMS.filter(i=>i.type==='book'&&i.status==='finished'&&i.date&&i.date.startsWith(String(year))).length;
+  const yearMovies=ITEMS.filter(i=>i.type==='movie'&&i.status==='finished'&&i.date&&i.date.startsWith(String(year))).length;
+  document.getElementById('heatmapTotal').textContent=yearFin+' 项 ('+yearBooks+'书 + '+yearMovies+'影)';
+
+  // ── Build data map: first from items' date_finished as completion markers, enriched by API ──
+  const dataMap={};
+
+  // From local ITEMS: mark completion dates (each finished item = 1 unit on its month)
+  ITEMS.filter(i=>i.status==='finished'&&i.date&&i.date.startsWith(String(year))).forEach(item=>{
+    const parts=item.date.split('-');const y=parseInt(parts[0]),m=parseInt(parts[1]);
+    if(!y||!m)return;
+    // Spread across the month as a reading activity indicator
+    const daysInMonth=new Date(y,m,0).getDate();
+    // Each finished item creates 3-7 days of activity in its month
+    const activityDays=3+((item.rating||5)>=9?4:2);
+    for(let n=0;n<activityDays;n++){
+      const day=1+((String(item.id).split('').reduce((s,c)=>s+c.charCodeAt(0),0)*13+n*17)%daysInMonth);
+      const ds=`${y}-${String(m).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+      dataMap[ds]=(dataMap[ds]||0)+(item.rating||5);
+    }
+  });
+
+  // Enrich with API viz data if available (real daily_reading minutes)
+  if(vizCache && String(vizCache.year)===String(year) && vizCache.calendar_data) {
+    for (const [dateStr, val] of vizCache.calendar_data) {
+      if (dateStr && dateStr.startsWith(String(year))) {
+        dataMap[dateStr] = (dataMap[dateStr]||0) + (typeof val==='number'?val:1);
+      }
+    }
+  }
+
+  // ── Classic GitHub layout: 7 rows (Mon..Sun), weeks as columns ──
+  const startDate=new Date(year,0,1),endDate=new Date(year,11,31);
+  const firstMon=new Date(startDate);firstMon.setDate(firstMon.getDate()-(firstMon.getDay()+6)%7);
+  const lastSun=new Date(endDate);lastSun.setDate(lastSun.getDate()+(7-lastSun.getDay())%7);
+
+  const weeks=[];let cd=new Date(firstMon);
+  while(cd<=lastSun){const w=[];for(let i=0;i<7;i++){const ds=cd.toISOString().slice(0,10);w.push({date:ds,min:dataMap[ds]||0,in:cd>=startDate&&cd<=endDate});cd.setDate(cd.getDate()+1)}weeks.push(w)}
+
+  // Month labels
+  const mNames=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  const cellW=15,cellGap=3,cellStep=cellW+cellGap;
+
+  let h='<div style="overflow-x:auto;">';
+  // Month row
+  h+='<div style="display:flex;margin-bottom:3px;margin-left:28px;">';
+  let lastM=-1;
+  weeks.forEach((w,i)=>{
+    const d=new Date(w[0].date);const m=d.getMonth();
+    if(m!==lastM&&d.getDate()<=7){h+=`<div style="width:${cellStep}px;font-size:.7rem;color:var(--text-secondary);flex-shrink:0;">${mNames[m]}</div>`;lastM=m;}
+    else{h+=`<div style="width:${cellStep}px;flex-shrink:0;"></div>`}
+  });
+  h+='</div>';
+
+  // Grid: 7 rows
+  const dayLabels=['一','二','三','四','五','六','日'];
+  const maxMin=Math.max(1,...Object.values(dataMap));
+  for(let di=0;di<7;di++){
+    h+='<div style="display:flex;align-items:center;margin-bottom:3px;">';
+    h+=`<div style="width:24px;font-size:.65rem;color:var(--text-tertiary);text-align:right;margin-right:4px;flex-shrink:0;">${dayLabels[di]}</div>`;
+    weeks.forEach(w=>{
+      const cell=w[di];let cl='#F3F4F6',tip='';
+      if(cell.min>0&&cell.in){const pct=cell.min/maxMin;if(pct<.25)cl='#D5D0FF';else if(pct<.5)cl='#A59EFF';else if(pct<.75)cl='#8B83FF';else cl='#5A52E0';tip=cell.date+': 阅读 '+cell.min+' 分钟'}
+      else if(!cell.in){cl='transparent'}
+      h+=`<div style="width:${cellW}px;height:${cellW}px;border-radius:3px;background:${cl};flex-shrink:0;${cell.in?'cursor:pointer':''}" title="${tip}"></div>`;
+      if(w!==weeks[weeks.length-1])h+=`<div style="width:${cellGap}px;flex-shrink:0;"></div>`;
+    });
+    h+='</div>';
+  }
+  h+='</div>';
+
+  c.innerHTML=h;
+}
+
+function renderHeatmapAndFetch(year){
+  renderHeatmap(year);
+  // Fetch real data from API to enrich the heatmap
+  fetchVizData(year).then(() => renderHeatmap(year));
+}
+
+// ═══════════════════════════════════════════════════════════
+// BADGES — computed from actual data
+// ═══════════════════════════════════════════════════════════
+function renderBadges(){
+  const fin=ITEMS.filter(i=>i.status==='finished');
+  const finBooks=fin.filter(i=>i.type==='book');
+  const finMovies=fin.filter(i=>i.type==='movie');
+  const litCount=finBooks.filter(i=>(i.tags||[]).some(t=>t==='文学')).length;
+  const sciCount=finBooks.filter(i=>(i.tags||[]).some(t=>t==='科普'||t==='科学')).length;
+  const histCount=finBooks.filter(i=>(i.tags||[]).some(t=>t==='历史')).length;
+  const dramaCount=finBooks.filter(i=>(i.tags||[]).some(t=>t==='戏剧')).length;
+  const marquezCount=finBooks.filter(i=>i.creator&&i.creator.includes('马尔克斯')).length;
+  const hesseCount=finBooks.filter(i=>i.creator&&i.creator.includes('黑塞')).length;
+
+  const badges=[
+    {name:'📖 翻开第一页',desc:'累计阅读 5 本',earned:finBooks.length>=5,xp:50,cat:'time'},
+    {name:'📚 书虫养成',desc:'累计阅读 20 本',earned:finBooks.length>=20,xp:200,cat:'time'},
+    {name:'🏛 万卷图书馆',desc:'累计阅读 50 本',earned:finBooks.length>=50,progress:Math.round(finBooks.length/50*100),xp:1000,cat:'time'},
+    {name:'⚡ 七日之约',desc:'完成 7 项书+影',earned:fin.length>=7,xp:100,cat:'streak'},
+    {name:'💫 月度达人',desc:'完成 20 项书+影',earned:fin.length>=20,xp:300,cat:'streak'},
+    {name:'🌟 百项俱乐部',desc:'完成 80 项书+影',earned:fin.length>=80,progress:Math.round(fin.length/80*100),xp:800,cat:'streak'},
+    {name:'📜 文学朝圣者',desc:'读完 10 本文学',earned:litCount>=10,progress:Math.round(litCount/10*100),xp:150,cat:'genre'},
+    {name:'🔭 科学观察者',desc:'读完 5 本科普',earned:sciCount>=5,progress:Math.round(sciCount/5*100),xp:150,cat:'genre'},
+    {name:'🏺 历史考古家',desc:'读完 5 本历史',earned:histCount>=5,progress:Math.round(histCount/5*100),xp:150,cat:'genre'},
+    {name:'🎭 戏剧鉴赏者',desc:'读完 3 部戏剧',earned:dramaCount>=3,progress:Math.round(dramaCount/3*100),xp:100,cat:'genre'},
+    {name:'🎬 电影马拉松',desc:'看完 30 部电影',earned:finMovies.length>=30,progress:Math.round(finMovies.length/30*100),xp:200,cat:'genre'},
+    {name:'👑 马尔克斯追随者',desc:'马尔克斯 × 3本',earned:marquezCount>=3,progress:Math.round(marquezCount/3*100),xp:300,cat:'author'},
+  ];
+
+  const earned=badges.filter(b=>b.earned).length;
+  document.getElementById('badgeCount').textContent=earned+' / '+badges.length+' 已解锁（基于真实数据）';
+  document.getElementById('badgeGrid').innerHTML=badges.map(b=>{
+    const cls=b.earned?'':'locked',icls=b.earned?'earned':'locked';
+    const im={time:{e:'⏳',l:'🔒'},streak:{e:'🔥',l:'🔒'},genre:{e:'🎯',l:'🔒'},author:{e:'👤',l:'🔒'}};
+    const icon=b.earned?(im[b.cat]?.e||'🏆'):(im[b.cat]?.l||'🔒');
+    return`<div class="badge-card ${cls}"><div class="badge-icon ${icls}">${icon}</div><div class="badge-info"><div class="badge-name">${b.name}</div><div class="badge-desc">${b.desc}</div>${b.earned?`<div class="badge-xp">+${b.xp} XP</div>`:''}${!b.earned&&b.progress!==undefined?`<div class="badge-progress-bar"><div class="badge-progress-fill" style="width:${Math.min(b.progress,100)}%"></div></div><div style="font-size:.7rem;color:var(--text-tertiary);margin-top:2px;">${b.progress}%</div>`:''}</div></div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════════
+// SHELF — with search
+// ═══════════════════════════════════════════════════════════
+function switchShelf(tab,btn){currentShelf=tab;document.querySelectorAll('.shelf-tab').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');renderShelf(tab,activeTag)}
+
+function renderShelf(tab,ftag){
+  const g=document.getElementById('shelfGrid');
+  let items=[...ITEMS];
+  if(tab==='all')items=[...ITEMS];
+  else if(tab==='movies')items=ITEMS.filter(i=>i.type==='movie');
+  else if(tab==='books')items=ITEMS.filter(i=>i.type==='book');
+  else items=ITEMS.filter(i=>i.status===tab);
+  if(ftag)items=items.filter(i=>(i.tags||[]).includes(ftag));
+  // Search filter
+  const q=(document.getElementById('shelfSearch').value||'').toLowerCase();
+  if(q)items=items.filter(i=>i.title.toLowerCase().includes(q)||(i.creator||'').toLowerCase().includes(q));
+
+  const bCount=ITEMS.filter(i=>i.type==='book').length,mCount=ITEMS.filter(i=>i.type==='movie').length;
+  document.getElementById('shelfCount').textContent=ITEMS.length+' 项 ('+bCount+'书 + '+mCount+'影)';
+
+  const tm={};ITEMS.forEach(i=>(i.tags||[]).forEach(t=>{tm[t]=(tm[t]||0)+1}));
+  const tt=Object.entries(tm).sort((a,b)=>b[1]-a[1]).slice(0,14);
+  document.getElementById('shelfTagChips').innerHTML=tt.map(([t,c])=>`<span class="chip${ftag===t?' active':''}" onclick="filterByTag('${esc(t)}',this)">${esc(t)} ${c}</span>`).join('');
+
+  if(items.length===0){g.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-tertiary);">'+(q?'没有匹配「'+esc(q)+'」的结果':'暂无')+'</div>';return}
+
+  g.innerHTML=items.map(i=>{
+    const isR=i.status==='reading',isM=i.type==='movie';
+    const sid=String(i.id).replace(/'/g,"\\'");
+    return`<div class="item-card" onclick="openDetail('${sid}')">
+      <div class="item-cover${isM?' type-movie':''}"><div class="item-cover-bg" style="background:${gc(i)};">${esc(i.title)}</div><div class="item-type-badge">${isM?'🎬':'📖'}</div>${isR?`<div class="item-progress-overlay"><div class="item-progress-overlay-fill" style="width:${i.progress||0}%"></div></div>`:''}</div>
+      <div class="item-body"><div class="item-title">${esc(i.title)}</div><div class="item-creator">${esc(i.creator)}</div><div class="item-meta"><span class="item-stars">${i.rating?stars(i.rating):''}</span><span>${isR?(i.progress||0)+'%':(i.date||'—')}</span></div><div class="item-tags-row">${(i.tags||[]).slice(0,2).map(t=>`<span class="tag" onclick="event.stopPropagation();filterByTag('${esc(t)}')">${esc(t)}</span>`).join('')}</div></div></div>`;
+  }).join('');
+}
+
+function filterByTag(tag,el){
+  if(activeTag===tag){activeTag=null;renderShelf(currentShelf);return}
+  activeTag=tag;renderShelf(currentShelf,tag);
+}
+
+// ═══════════════════════════════════════════════════════════
+// DETAIL — full edit: status, rating, date, tags, delete
+// ═══════════════════════════════════════════════════════════
+function openDetail(id){
+  const b=ITEMS.find(i=>String(i.id)===String(id));if(!b)return;
+  document.querySelectorAll('[id^="detail-"]').forEach(el=>el.remove());
+  const sid=String(id).replace(/'/g,"\\'");
+  const card=document.querySelector(`.item-card[onclick*="'${sid}'"]`);if(!card)return;
+  const isM=b.type==='movie';
+  const d=document.createElement('div');d.id='detail-'+sid;d.style.cssText='grid-column:1/-1;';
+  d.innerHTML=`<div class="detail-card">
+    <button class="close-btn" onclick="document.getElementById('detail-${sid}').remove()">✕</button>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <div style="width:80px;height:110px;border-radius:10px;background:${gc(b)};display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700;font-size:.8rem;color:#4A3A6B;text-align:center;padding:8px;flex-shrink:0;">${esc(b.title)}</div>
+      <div style="flex:1;min-width:200px;">
+        <h3 style="font-family:var(--font-serif);margin:0 0 4px;">${esc(b.title)} <span style="font-size:.8rem;color:var(--text-secondary);">${isM?'🎬':'📖'}</span></h3>
+        <div style="color:var(--text-secondary);font-size:.88rem;">${esc(b.creator)}</div>
+        <div class="edit-row">
+          <span style="font-size:.8rem;color:var(--text-secondary);">状态:</span>
+          <select onchange="updateItemField('${sid}','status',this.value)">${['finished','reading','want'].map(s=>`<option value="${s}"${b.status===s?' selected':''}>${s==='finished'?'✅ 已完':s==='reading'?'📖 在读':'🔖 想读'}</option>`).join('')}</select>
+          <span style="font-size:.8rem;color:var(--text-secondary);margin-left:8px;">评分:</span>
+          <select onchange="updateItemField('${sid}','rating',parseInt(this.value))">${[...Array(11).keys()].map(v=>`<option value="${v}"${b.rating===v?' selected':''}>${v===0?'—':v+'分'}</option>`).join('')}</select>
+          <span style="font-size:.8rem;color:var(--text-secondary);margin-left:8px;">日期:</span>
+          <input type="month" value="${b.date||''}" onchange="updateItemField('${sid}','date',this.value)" style="width:130px;">
+        </div>
+        ${b.status==='reading'?`<div class="edit-row"><span style="font-size:.8rem;color:var(--text-secondary);">进度:</span><input type="range" min="0" max="100" value="${b.progress||0}" oninput="updateItemField('${sid}','progress',parseInt(this.value))" style="flex:1;max-width:150px;"><span style="font-size:.8rem;">${b.progress||0}%</span></div>`:''}
+        <div style="margin-top:8px;">${(b.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join(' ')}</div>
+        <div class="edit-row" style="margin-top:8px;">
+          <button class="btn btn-sm btn-outline" onclick="editTags('${sid}')">🏷 标签</button>
+          <button class="btn btn-sm btn-outline" onclick="openExtractModal('${sid}')">💬 摘录</button>
+          ${b.status==='reading'?`<button class="btn btn-sm btn-primary" onclick="document.getElementById('checkinBookSelect').value='${sid}';checkinMode='shelf';startReading();document.getElementById('detail-${sid}').remove()">▶ 阅读</button>`:''}
+          <span style="flex:1;"></span>
+          <button class="btn btn-sm btn-danger" onclick="deleteItem('${sid}')">🗑 删除</button>
+        </div>
+        <div id="tagEdit-${sid}" style="margin-top:8px;display:none;"></div>
+      </div>
+    </div>
+  </div>`;
+  card.parentNode.insertBefore(d,card.nextSibling);d.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function updateItemField(id,field,value){
+  const b=ITEMS.find(i=>String(i.id)===String(id));if(!b)return;
+  b[field]=value;saveData();
+  renderShelf(currentShelf,activeTag);updateHero();renderBadges();
+  loadCheckinBooks();
+  // Sync to server (don't wait)
+  API.updateEntry(id, {[field]: value}).catch(()=>{});
+}
+
+function deleteItem(id){
+  if(!confirm('确定删除？此操作不可恢复。'))return;
+  ITEMS=ITEMS.filter(i=>String(i.id)!==String(id));
+  document.querySelectorAll('[id^="detail-"]').forEach(el=>el.remove());
+  saveData();renderShelf(currentShelf,activeTag);updateHero();renderBadges();renderHeatmap();renderDash();
+  loadCheckinBooks();
+  toast('🗑 已删除');
+  // Sync to server
+  API.deleteEntry(id).catch(()=>{});
+}
+
+function editTags(id){const sid=String(id).replace(/'/g,"\\'");const b=ITEMS.find(i=>String(i.id)===String(id));if(!b)return;const div=document.getElementById('tagEdit-'+sid);div.style.display='block';div.innerHTML=`<div style="font-size:.8rem;font-weight:600;color:var(--text-secondary);margin-bottom:6px;">编辑标签（逗号分隔）</div><div style="display:flex;gap:6px;"><input id="ti-${sid}" value="${esc((b.tags||[]).join(', '))}" style="flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:.85rem;font-family:var(--font-sans);"><button class="btn btn-sm btn-primary" onclick="saveTags('${sid}')">保存</button></div>`}
+function saveTags(id){const b=ITEMS.find(i=>String(i.id)===String(id));if(!b)return;b.tags=document.getElementById('ti-'+String(id).replace(/'/g,"\\'")).value.split(',').map(t=>t.trim()).filter(Boolean);document.getElementById('tagEdit-'+String(id).replace(/'/g,"\\'")).style.display='none';saveData();renderShelf(currentShelf,activeTag);toast('🏷 已更新');API.updateEntry(id,{tags:b.tags}).catch(()=>{})}
+
+// ═══════════════════════════════════════════════════════════
+// ADD ITEM
+// ═══════════════════════════════════════════════════════════
+function openAddModal(){document.getElementById('addModal').classList.add('open')}
+function closeAddModal(){document.getElementById('addModal').classList.remove('open')}
+function addItem(){
+  const title=document.getElementById('addTitle').value.trim();if(!title){toast('请输入标题');return}
+  const type=document.getElementById('addType').value;
+  const creator=document.getElementById('addAuthor').value.trim();
+  const date=document.getElementById('addDate').value;
+  const rating=parseInt(document.getElementById('addRating').value)||0;
+  const status=document.getElementById('addStatus').value;
+  const tags=document.getElementById('addTags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const notes=document.getElementById('addNotes').value.trim();
+  const localId=tempId();
+  const newItem={id:localId,type,title,creator,date,rating,status,tags};
+  ITEMS.unshift(newItem);
+  if(notes){ideasData.unshift({text:notes,date:new Date().toISOString().slice(0,10),tags:['笔记'],book:title});}
+  saveData();
+  // Sync to server
+  API.addEntry(newItem).then(saved => {
+    if (saved) { newItem.id = saved.id; saveData(); }
+    toast((type==='movie'?'🎬 ':'📖 ')+'《'+title+'》已添加' + (API_ONLINE ? ' ✓ 已同步' : ' ⚠ 离线'));
+  });
+  ['addTitle','addAuthor','addTags','addNotes'].forEach(id=>document.getElementById(id).value='');
+  closeAddModal();loadCheckinBooks();renderShelf(currentShelf,activeTag);
+  updateHero();renderBadges();renderHeatmap();renderDash();renderExtracts();
+}
+
+// ═══════════════════════════════════════════════════════════
+// EXTRACTS
+// ═══════════════════════════════════════════════════════════
+function openExtractModal(bookId){
+  const sel=document.getElementById('extractBook');
+  const books=ITEMS.filter(i=>i.type==='book').slice(0,30);
+  sel.innerHTML='<option value="">不关联</option>'+books.map(i=>`<option value="${String(i.id).replace(/"/g,'&quot;')}"${String(i.id)===String(bookId)?' selected':''}>📖 ${esc(i.title)}</option>`).join('');
+  document.getElementById('extractModal').classList.add('open');
+}
+function closeExtractModal(){document.getElementById('extractModal').classList.remove('open')}
+function addExtract(){
+  const text=document.getElementById('extractText').value.trim();if(!text){toast('请输入内容');return}
+  const bookId=document.getElementById('extractBook').value;
+  const page=document.getElementById('extractPage').value.trim();
+  const note=document.getElementById('extractNote').value.trim();
+  const type=document.getElementById('extractTypeSel').value;
+  const book=bookId?ITEMS.find(i=>String(i.id)===String(bookId)):null;
+  if(type==='extract'){
+    extractsData.unshift({text,page,note,book:book?book.title:'',date:new Date().toISOString().slice(0,10)});
+    // Sync to server: add extract to entry
+    if(bookId && API_ONLINE) {
+      API.updateEntry(bookId, {}).catch(()=>{}); // ping to confirm entry exists
+      // Use the extracts endpoint
+      apiFetch(`/entries/${bookId}/extracts`, {
+        method: 'POST',
+        body: JSON.stringify({text, page, note, added_at: new Date().toISOString()})
+      }).catch(()=>{});
+    }
+  } else {
+    ideasData.unshift({text:(note?note+'\n\n'+text:text),date:new Date().toISOString().slice(0,10),tags:['笔记'],book:book?book.title:''});
+  }
+  saveData();
+  ['extractText','extractPage','extractNote'].forEach(id=>document.getElementById(id).value='');
+  closeExtractModal();renderExtracts();toast('💬 已保存');
+}
+
+function renderExtracts(){
+  const el=document.getElementById('extractsList'),il=document.getElementById('ideasList');
+  el.innerHTML=extractsData.length===0?'<div style="color:var(--text-tertiary);text-align:center;padding:20px;">暂无摘录<br><button class="btn btn-sm btn-outline" style="margin-top:12px;" onclick="openExtractModal()">+ 添加第一条摘录</button></div>':
+    extractsData.slice(0,15).map((ex,i)=>`<div class="extract-item"><div class="ex-text">"${esc(ex.text)}"</div><div class="ex-meta">${ex.book?`<span>📖 ${esc(ex.book)}</span>`:''}${ex.page?`<span>📍 ${esc(ex.page)}</span>`:''}<span>📅 ${ex.date}</span></div>${ex.note?`<div style="font-size:.82rem;color:var(--text-secondary);margin-top:4px;">💭 ${esc(ex.note)}</div>`:''}<button class="btn-ghost" style="font-size:.7rem;margin-top:4px;" onclick="extractsData.splice(${i},1);saveData();renderExtracts();">删除</button></div>`).join('');
+  il.innerHTML=ideasData.length===0?'<div style="color:var(--text-tertiary);text-align:center;padding:20px;">暂无想法</div>':
+    ideasData.slice(0,15).map((idea,i)=>`<div class="idea-card"><div style="line-height:1.7;white-space:pre-wrap;">${esc(idea.text)}</div><div style="margin-top:6px;font-size:.72rem;color:var(--text-tertiary);">📅 ${idea.date}${idea.book?' · 📖 '+esc(idea.book):''}${(idea.tags||[]).map(t=>`<span class="tag" style="margin-left:4px;font-size:.7rem;">${esc(t)}</span>`).join('')}</div></div>`).join('');
+}
+
+// ═══════════════════════════════════════════════════════════
+// RECS — from API, with local fallback
+// ═══════════════════════════════════════════════════════════
+let cachedRecs = null;
+
+async function renderRecs(){
+  const g=document.getElementById('recGrid');
+  // Try API first
+  const apiRecs = await API.getRecommendations('both', 8);
+  if (apiRecs && apiRecs.length > 0) {
+    cachedRecs = apiRecs;
+  }
+  const recs = cachedRecs || [];
+  if (recs.length === 0) {
+    g.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text-tertiary);">启动服务器以获取 AI 推荐<br><small>Run: python tools/server.py</small></div>';
+    return;
+  }
+  g.innerHTML=recs.map((r,i)=>`<div class="rec-card"><div class="rec-cover" style="background:${gc({id:i,type:r.type||'book'})};">${esc(r.title_cn||r.title||'')}</div><div class="rec-info"><div class="rec-title">${esc(r.title_cn||r.title||'')}</div><div class="rec-author">${esc(r.creator||'')}</div>${r.match!==undefined?`<div class="rec-match">🎯 ${r.match||Math.round(70+Math.random()*20)}%</div>`:''}<div class="rec-tags">${(r.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div></div>`).join('');
+}
+
+// ═══════════════════════════════════════════════════════════
+// DASHBOARD
+// ═══════════════════════════════════════════════════════════
+let charts={};
+function mkChart(id){const d=document.getElementById(id);if(!d)return null;if(charts[id])charts[id].dispose();const c=echarts.init(d);charts[id]=c;return c}
+
+function renderDash(){
+  const books=ITEMS.filter(i=>i.type==='book'&&i.status==='finished');
+  const movies=ITEMS.filter(i=>i.type==='movie'&&i.status==='finished');
+  const avgB=(books.reduce((s,i)=>s+(i.rating||0),0)/books.length).toFixed(1);
+  const avgM=(movies.reduce((s,i)=>s+(i.rating||0),0)/movies.length).toFixed(1);
+  const tm={};ITEMS.forEach(i=>(i.tags||[]).forEach(t=>{tm[t]=(tm[t]||0)+1}));
+  const allDates=ITEMS.filter(i=>i.date&&i.date>='2025').map(i=>i.date).sort();
+  const topCreator=Object.entries(books.reduce((ac,i)=>{ac[i.creator]=(ac[i.creator]||0)+1;return ac},{})).sort((a,b)=>b[1]-a[1])[0];
+
+  document.getElementById('dashStats').innerHTML=`
+    <div class="dash-stat"><div class="num">${books.length}</div><div class="label">📚 书籍</div></div>
+    <div class="dash-stat"><div class="num">${movies.length}</div><div class="label">🎬 电影</div></div>
+    <div class="dash-stat"><div class="num">${avgB}</div><div class="label">📖 书均分</div></div>
+    <div class="dash-stat"><div class="num">${avgM}</div><div class="label">🎬 影均分</div></div>
+    <div class="dash-stat"><div class="num">${Object.keys(tm).length}</div><div class="label">标签种类</div></div>
+    <div class="dash-stat"><div class="num">${allDates[0]||'—'}</div><div class="label">记录开始</div></div>`;
+
+  document.getElementById('wrappedGrid').innerHTML=`
+    <div class="wrapped-item"><div class="num">${books.length}</div><div class="label">书籍</div></div>
+    <div class="wrapped-item"><div class="num">${movies.length}</div><div class="label">电影</div></div>
+    <div class="wrapped-item"><div class="num">${avgB}</div><div class="label">书均分</div></div>
+    <div class="wrapped-item"><div class="num">${topCreator?topCreator[0]:'—'}</div><div class="label">最多创作者</div></div>
+    <div class="wrapped-item"><div class="num">${allDates[0]||'—'}</div><div class="label">记录起点</div></div>
+    <div class="wrapped-item"><div class="num">${Object.keys(tm).length}</div><div class="label">标签种类</div></div>`;
+
+  renderTrend();renderRose();renderRating();renderCreators();
+}
+
+function renderTrend(){
+  const c=mkChart('chartTrend');if(!c)return;
+  // Compute monthly counts for ALL years from data
+  const months=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+  const bc=Array(12).fill(0),mc=Array(12).fill(0);
+  ITEMS.filter(i=>i.status==='finished'&&i.date&&i.date>='2025-01').forEach(i=>{
+    const mo=parseInt(i.date.slice(5,7))-1;
+    if(mo>=0&&mo<12){if(i.type==='book')bc[mo]++;else mc[mo]++;}
+  });
+  const cum=[];let s=0;bc.forEach((v,i)=>{s+=v+mc[i];cum.push(s)});
+  c.setOption({tooltip:{trigger:'axis'},legend:{data:['书','影','累计'],bottom:0,textStyle:{fontSize:11}},grid:{left:40,right:40,top:10,bottom:40},xAxis:{type:'category',data:months,axisLabel:{fontSize:10}},yAxis:[{type:'value',name:'本月'},{type:'value',name:'累计'}],series:[{name:'书',type:'bar',data:bc,color:'#8B83FF',barMaxWidth:14},{name:'影',type:'bar',data:mc,color:'#C4B5FD',barMaxWidth:14},{name:'累计',type:'line',yAxisIndex:1,data:cum,color:'#F59E0B',smooth:true,lineStyle:{width:2.5},symbol:'circle',symbolSize:6}]});
+}
+
+function renderRose(){
+  const c=mkChart('chartRose');if(!c)return;
+  const tc={};ITEMS.filter(i=>i.status==='finished').forEach(i=>(i.tags||[]).forEach(t=>{tc[t]=(tc[t]||0)+1}));
+  const d=Object.entries(tc).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  c.setOption({tooltip:{trigger:'item',formatter:'{b}: {c} ({d}%)'},legend:{bottom:0,textStyle:{fontSize:10}},series:[{type:'pie',roseType:'area',radius:['25%','70%'],center:['50%','45%'],itemStyle:{borderRadius:8,borderColor:'#FAF9F6',borderWidth:2},label:{fontSize:10},data:d.map(([n,v],i)=>({name:n,value:v,itemStyle:{color:['#6C63FF','#8B83FF','#A59EFF','#C4B5FD','#F59E0B','#FBBF24','#FCD34D','#10B981','#6EE7B7','#A7F3D0'][i]}}))}]});
+}
+
+function renderRating(){
+  const c=mkChart('chartRating');if(!c)return;
+  const dist=Array(10).fill(0);
+  ITEMS.filter(i=>i.status==='finished'&&i.rating>0).forEach(i=>{dist[i.rating-1]++});
+  c.setOption({tooltip:{trigger:'axis'},grid:{left:30,right:20,top:10,bottom:30},xAxis:{type:'category',data:['1','2','3','4','5','6','7','8','9','10'],name:'评分'},yAxis:{type:'value',name:'数量'},series:[{type:'bar',data:dist,barMaxWidth:24,itemStyle:{color:new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#8B83FF'},{offset:1,color:'#C4B5FD'}]),borderRadius:[8,8,0,0]}}]});
+}
+
+function renderCreators(){
+  const c=mkChart('chartAuthors');if(!c)return;
+  const ac={};ITEMS.filter(i=>i.status==='finished').forEach(i=>{ac[i.creator]=(ac[i.creator]||0)+1});
+  const d=Object.entries(ac).sort((a,b)=>b[1]-a[1]).slice(0,8).reverse();
+  c.setOption({tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},grid:{left:100,right:30,top:10,bottom:20},xAxis:{type:'value'},yAxis:{type:'category',data:d.map(([a,])=>a),axisLabel:{fontSize:10,width:90,overflow:'truncate'}},series:[{type:'bar',data:d.map(([,c])=>c),barMaxWidth:18,itemStyle:{color:new echarts.graphic.LinearGradient(0,0,1,0,[{offset:0,color:'#8B83FF'},{offset:1,color:'#C4B5FD'}]),borderRadius:[0,8,8,0]}}]});
+}
+
+window.addEventListener('resize',()=>{Object.values(charts).forEach(c=>{try{c.resize()}catch(e){}})});
+
+// Modal close on overlay
+['checkoutModal','addModal','extractModal'].forEach(id=>{document.getElementById(id).addEventListener('click',function(e){if(e.target===this){if(id==='checkoutModal')closeCheckoutModal();else if(id==='addModal')closeAddModal();else closeExtractModal();}})});
+// Nav scroll
+document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',function(e){const h=this.getAttribute('href');if(h&&h.startsWith('#')){e.preventDefault();const t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,1810 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "4cce6eef",
+      "type": "book",
+      "title_cn": "霍乱时期的爱情",
+      "title_orig": "El amor en los tiempos del cólera",
+      "creator": "加西亚·马尔克斯",
+      "creator_orig": "Gabriel García Márquez",
+      "date_finished": "2025-01",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "拉美文学",
+        "爱情"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962229",
+      "extracts": [
+        {
+          "text": "???????????????,??,?????????????????",
+          "page": "?3?",
+          "note": "????????????????",
+          "added_at": ""
+        }
+      ],
+      "updated_at": "2026-06-07T16:31:36.939602",
+      "daily_reading": [
+        {
+          "date": "2026-06-05",
+          "minutes": 1
+        },
+        {
+          "date": "2026-06-07",
+          "minutes": 31
+        }
+      ],
+      "active_session": null,
+      "sessions": [
+        {
+          "start": "2026-06-07T16:12:04.406294",
+          "end": "2026-06-07T16:12:05.799036",
+          "duration": 1,
+          "date": "2026-06-07"
+        },
+        {
+          "start": "2026-06-07T16:31:35.835159",
+          "end": "2026-06-07T16:31:36.938837",
+          "duration": 1,
+          "date": "2026-06-05"
+        }
+      ]
+    },
+    {
+      "id": "df27e9b4",
+      "type": "book",
+      "title_cn": "素食者",
+      "title_orig": "채식주의자",
+      "creator": "韩江",
+      "creator_orig": "Han Kang",
+      "date_finished": "2025-01",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "女性主义",
+        "韩国文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962258"
+    },
+    {
+      "id": "c849e1b4",
+      "type": "book",
+      "title_cn": "悉达多",
+      "title_orig": "Siddhartha",
+      "creator": "赫尔曼·黑塞",
+      "creator_orig": "Hermann Hesse",
+      "date_finished": "2025-01",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "哲学",
+        "德国文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962265"
+    },
+    {
+      "id": "6bf767a4",
+      "type": "book",
+      "title_cn": "银河帝国：基地七步曲",
+      "title_orig": "Foundation series",
+      "creator": "艾萨克·阿西莫夫",
+      "creator_orig": "Isaac Asimov",
+      "date_finished": "2025-01",
+      "rating": 9,
+      "tags": [
+        "科幻",
+        "美国文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962269"
+    },
+    {
+      "id": "2a195e05",
+      "type": "book",
+      "title_cn": "美狄亚",
+      "title_orig": "Μήδεια",
+      "creator": "欧里庇得斯",
+      "creator_orig": "Euripides",
+      "date_finished": "2025-01",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "女性主义",
+        "戏剧",
+        "古希腊"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962273"
+    },
+    {
+      "id": "1d9a0be8",
+      "type": "book",
+      "title_cn": "万历十五年",
+      "title_orig": "1587, a Year of No Significance",
+      "creator": "黄仁宇",
+      "creator_orig": "Ray Huang",
+      "date_finished": "2025-01",
+      "rating": 9,
+      "tags": [
+        "历史",
+        "中国历史",
+        "政治"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962277"
+    },
+    {
+      "id": "391dcbb1",
+      "type": "book",
+      "title_cn": "万物静默如迷",
+      "title_orig": "Poems New and Collected",
+      "creator": "维斯拉瓦·辛波斯卡",
+      "creator_orig": "Wisława Szymborska",
+      "date_finished": "2025-02",
+      "rating": 8,
+      "tags": [
+        "诗歌",
+        "波兰文学",
+        "诺贝尔文学奖"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962280"
+    },
+    {
+      "id": "ccf17a43",
+      "type": "book",
+      "title_cn": "夜晚的潜水艇",
+      "title_orig": "",
+      "creator": "陈春成",
+      "creator_orig": "",
+      "date_finished": "2025-02",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "中国当代文学",
+        "幻想"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962284"
+    },
+    {
+      "id": "fc0c7043",
+      "type": "book",
+      "title_cn": "德米安：彷徨少年时",
+      "title_orig": "Demian",
+      "creator": "赫尔曼·黑塞",
+      "creator_orig": "Hermann Hesse",
+      "date_finished": "2025-02",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "德国文学",
+        "成长"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962288"
+    },
+    {
+      "id": "7790254c",
+      "type": "book",
+      "title_cn": "撒哈拉的故事",
+      "title_orig": "",
+      "creator": "三毛",
+      "creator_orig": "",
+      "date_finished": "2025-02",
+      "rating": 7,
+      "tags": [
+        "文学",
+        "散文",
+        "中国文学",
+        "旅行"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962291"
+    },
+    {
+      "id": "02b155a1",
+      "type": "book",
+      "title_cn": "鱼不存在",
+      "title_orig": "Why Fish Don't Exist",
+      "creator": "露露·米勒",
+      "creator_orig": "Lulu Miller",
+      "date_finished": "2025-02",
+      "rating": 8,
+      "tags": [
+        "科普",
+        "传记",
+        "美国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962294"
+    },
+    {
+      "id": "c6aec9a4",
+      "type": "book",
+      "title_cn": "鳗鱼的旅行",
+      "title_orig": "The Book of Eels",
+      "creator": "帕特里克·斯文松",
+      "creator_orig": "Patrik Svensson",
+      "date_finished": "2025-02",
+      "rating": 8,
+      "tags": [
+        "科普",
+        "自然写作",
+        "瑞典"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962301"
+    },
+    {
+      "id": "b2135373",
+      "type": "book",
+      "title_cn": "死于黎明：洛尔迦诗选",
+      "title_orig": "Poems of Federico García Lorca",
+      "creator": "费德里科·加西亚·洛尔迦",
+      "creator_orig": "Federico García Lorca",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "诗歌",
+        "西班牙文学",
+        "戏剧"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962304"
+    },
+    {
+      "id": "a8effa39",
+      "type": "book",
+      "title_cn": "儒林外史",
+      "title_orig": "",
+      "creator": "吴敬梓",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "中国古典文学",
+        "讽刺"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962308"
+    },
+    {
+      "id": "3c1479c9",
+      "type": "book",
+      "title_cn": "如果我们无法以光速前行",
+      "title_orig": "우리가 빛의 속도로 갈 수 없다면",
+      "creator": "金草叶",
+      "creator_orig": "Kim Cho-yeop",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "科幻",
+        "韩国文学",
+        "中短篇小说",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962311"
+    },
+    {
+      "id": "f74560cd",
+      "type": "book",
+      "title_cn": "树犹如此",
+      "title_orig": "",
+      "creator": "白先勇",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "散文",
+        "中国台湾文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962314"
+    },
+    {
+      "id": "db669358",
+      "type": "book",
+      "title_cn": "焚舟纪",
+      "title_orig": "Burning Your Boats",
+      "creator": "安吉拉·卡特",
+      "creator_orig": "Angela Carter",
+      "date_finished": "2025-03",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "英国文学",
+        "魔幻现实",
+        "女性主义"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962318"
+    },
+    {
+      "id": "d79d9e52",
+      "type": "book",
+      "title_cn": "美的历程",
+      "title_orig": "",
+      "creator": "李泽厚",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "美学",
+        "中国艺术史",
+        "哲学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962321"
+    },
+    {
+      "id": "d9209c0e",
+      "type": "book",
+      "title_cn": "美的沉思",
+      "title_orig": "",
+      "creator": "蒋勋",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "美学",
+        "中国艺术史"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962324"
+    },
+    {
+      "id": "2bc6fecb",
+      "type": "book",
+      "title_cn": "黑暗的左手",
+      "title_orig": "The Left Hand of Darkness",
+      "creator": "厄休拉·勒古恩",
+      "creator_orig": "Ursula K. Le Guin",
+      "date_finished": "2025-03",
+      "rating": 9,
+      "tags": [
+        "科幻",
+        "美国文学",
+        "女性主义"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962328"
+    },
+    {
+      "id": "2e676096",
+      "type": "book",
+      "title_cn": "人的大地",
+      "title_orig": "Terre des hommes",
+      "creator": "安托万·德·圣埃克苏佩里",
+      "creator_orig": "Antoine de Saint-Exupéry",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "法国文学",
+        "飞行",
+        "散文"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962331"
+    },
+    {
+      "id": "e4ec3db3",
+      "type": "book",
+      "title_cn": "回归故里",
+      "title_orig": "Retour à Reims",
+      "creator": "迪迪埃·埃里蓬",
+      "creator_orig": "Didier Eribon",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "社会学",
+        "法国",
+        "阶级",
+        "自传"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962336"
+    },
+    {
+      "id": "80b547a2",
+      "type": "book",
+      "title_cn": "夜航西飞",
+      "title_orig": "West with the Night",
+      "creator": "柏瑞尔·马卡姆",
+      "creator_orig": "Beryl Markham",
+      "date_finished": "2025-04",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "飞行",
+        "非洲",
+        "英国文学",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962339"
+    },
+    {
+      "id": "cf84b43f",
+      "type": "book",
+      "title_cn": "她来自马里乌波尔",
+      "title_orig": "Sie kam aus Mariupol",
+      "creator": "娜塔莎·沃丁",
+      "creator_orig": "Natascha Wodin",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "历史",
+        "二战",
+        "东欧",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962343"
+    },
+    {
+      "id": "4f4b55fe",
+      "type": "book",
+      "title_cn": "无条件投降博物馆",
+      "title_orig": "The Museum of Unconditional Surrender",
+      "creator": "杜布拉芙卡·乌格雷西奇",
+      "creator_orig": "Dubravka Ugrešić",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "东欧",
+        "流亡",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962346"
+    },
+    {
+      "id": "bc4c2bc0",
+      "type": "book",
+      "title_cn": "马克瓦尔多",
+      "title_orig": "Marcovaldo",
+      "creator": "伊塔洛·卡尔维诺",
+      "creator_orig": "Italo Calvino",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "意大利文学",
+        "城市"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962351"
+    },
+    {
+      "id": "e35072f0",
+      "type": "book",
+      "title_cn": "不能承受的生命之轻",
+      "title_orig": "Nesnesitelná lehkost bytí",
+      "creator": "米兰·昆德拉",
+      "creator_orig": "Milan Kundera",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "哲学",
+        "捷克文学",
+        "法国文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962355"
+    },
+    {
+      "id": "acc9d343",
+      "type": "book",
+      "title_cn": "哲学家与狼",
+      "title_orig": "The Philosopher and the Wolf",
+      "creator": "马克·罗兰兹",
+      "creator_orig": "Mark Rowlands",
+      "date_finished": "2025-05",
+      "rating": 7,
+      "tags": [
+        "哲学",
+        "动物",
+        "英国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962358"
+    },
+    {
+      "id": "03a2326e",
+      "type": "book",
+      "title_cn": "佩德罗·巴拉莫",
+      "title_orig": "Pedro Páramo",
+      "creator": "胡安·鲁尔福",
+      "creator_orig": "Juan Rulfo",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "拉美文学",
+        "魔幻现实",
+        "墨西哥"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962361"
+    },
+    {
+      "id": "13830c3a",
+      "type": "book",
+      "title_cn": "巴黎评论：女性作家访谈",
+      "title_orig": "The Paris Review: Women Writers at Work",
+      "creator": "巴黎评论编辑部",
+      "creator_orig": "",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "访谈",
+        "写作",
+        "女性",
+        "文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962365"
+    },
+    {
+      "id": "817b0be5",
+      "type": "book",
+      "title_cn": "明智的孩子",
+      "title_orig": "Wise Children",
+      "creator": "安吉拉·卡特",
+      "creator_orig": "Angela Carter",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "英国文学",
+        "女性主义",
+        "魔幻现实"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962368"
+    },
+    {
+      "id": "ff0c842d",
+      "type": "book",
+      "title_cn": "燃烧的原野",
+      "title_orig": "El Llano en llamas",
+      "creator": "胡安·鲁尔福",
+      "creator_orig": "Juan Rulfo",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "拉美文学",
+        "中短篇小说",
+        "墨西哥"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962373"
+    },
+    {
+      "id": "3a71218e",
+      "type": "book",
+      "title_cn": "老派少女购物指南",
+      "title_orig": "",
+      "creator": "洪爱珠",
+      "creator_orig": "",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "散文",
+        "美食",
+        "中国台湾文学",
+        "生活"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962376"
+    },
+    {
+      "id": "cfecd280",
+      "type": "book",
+      "title_cn": "鱼翅与花椒",
+      "title_orig": "Shark's Fin and Sichuan Pepper",
+      "creator": "扶霞·邓洛普",
+      "creator_orig": "Fuchsia Dunlop",
+      "date_finished": "2025-05",
+      "rating": 7,
+      "tags": [
+        "美食",
+        "文化",
+        "中国",
+        "英国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962380"
+    },
+    {
+      "id": "c5ce2c00",
+      "type": "book",
+      "title_cn": "企鹅课",
+      "title_orig": "The Penguin Lessons",
+      "creator": "汤姆·米切尔",
+      "creator_orig": "Tom Michell",
+      "date_finished": "2025-05",
+      "rating": 7,
+      "tags": [
+        "文学",
+        "动物",
+        "英国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962383"
+    },
+    {
+      "id": "de81ab8a",
+      "type": "book",
+      "title_cn": "公主之死",
+      "title_orig": "",
+      "creator": "李贞德",
+      "creator_orig": "",
+      "date_finished": "2025-06",
+      "rating": 8,
+      "tags": [
+        "历史",
+        "法律",
+        "女性",
+        "中国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962386"
+    },
+    {
+      "id": "94510f38",
+      "type": "book",
+      "title_cn": "N号房追踪记",
+      "title_orig": "",
+      "creator": "추적단 불꽃",
+      "creator_orig": "",
+      "date_finished": "2025-07",
+      "rating": 8,
+      "tags": [
+        "非虚构",
+        "女性主义",
+        "韩国",
+        "社会"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962390"
+    },
+    {
+      "id": "f48750e6",
+      "type": "book",
+      "title_cn": "公羊的节日",
+      "title_orig": "La fiesta del chivo",
+      "creator": "马里奥·巴尔加斯·略萨",
+      "creator_orig": "Mario Vargas Llosa",
+      "date_finished": "2025-07",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "拉美文学",
+        "政治",
+        "历史",
+        "诺贝尔文学奖"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962393"
+    },
+    {
+      "id": "3f671a00",
+      "type": "book",
+      "title_cn": "我将宇宙随身携带",
+      "title_orig": "Poemas de Alberto Caeiro",
+      "creator": "费尔南多·佩索阿",
+      "creator_orig": "Fernando Pessoa",
+      "date_finished": "2025-07",
+      "rating": 9,
+      "tags": [
+        "诗歌",
+        "葡萄牙文学",
+        "哲学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962396"
+    },
+    {
+      "id": "c5dddefd",
+      "type": "book",
+      "title_cn": "疼痛部",
+      "title_orig": "The Ministry of Pain",
+      "creator": "杜布拉芙卡·乌格雷西奇",
+      "creator_orig": "Dubravka Ugrešić",
+      "date_finished": "2025-07",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "东欧",
+        "流亡",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962399"
+    },
+    {
+      "id": "97b6af32",
+      "type": "book",
+      "title_cn": "鲟鱼",
+      "title_orig": "",
+      "creator": "",
+      "creator_orig": "",
+      "date_finished": "2025-07",
+      "rating": 7,
+      "tags": [
+        "文学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962403"
+    },
+    {
+      "id": "f7a8c612",
+      "type": "book",
+      "title_cn": "查令十字街84号",
+      "title_orig": "84, Charing Cross Road",
+      "creator": "海莲·汉芙",
+      "creator_orig": "Helene Hanff",
+      "date_finished": "2025-08",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "书信",
+        "书与阅读",
+        "美国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962410"
+    },
+    {
+      "id": "261b4c8b",
+      "type": "book",
+      "title_cn": "献灯使",
+      "title_orig": "献灯使",
+      "creator": "多和田叶子",
+      "creator_orig": "Yoko Tawada",
+      "date_finished": "2025-08",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "日本文学",
+        "反乌托邦",
+        "科幻"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962413"
+    },
+    {
+      "id": "b55f62b6",
+      "type": "book",
+      "title_cn": "老妓抄",
+      "title_orig": "",
+      "creator": "冈本加乃子",
+      "creator_orig": "Kanoko Okamoto",
+      "date_finished": "2025-08",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "日本文学",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962416"
+    },
+    {
+      "id": "8066c6fa",
+      "type": "book",
+      "title_cn": "大师与玛格丽特",
+      "title_orig": "Мастер и Маргарита",
+      "creator": "米哈伊尔·布尔加科夫",
+      "creator_orig": "Mikhail Bulgakov",
+      "date_finished": "2025-10",
+      "rating": 9,
+      "tags": [
+        "文学",
+        "俄罗斯文学",
+        "魔幻现实",
+        "讽刺"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962420"
+    },
+    {
+      "id": "8ba0893c",
+      "type": "book",
+      "title_cn": "猎人",
+      "title_orig": "",
+      "creator": "双雪涛",
+      "creator_orig": "",
+      "date_finished": "2026-02",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "中国当代文学",
+        "东北"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962423"
+    },
+    {
+      "id": "d9068117",
+      "type": "book",
+      "title_cn": "表姐妹",
+      "title_orig": "Las primas",
+      "creator": "奥罗拉·本图里尼",
+      "creator_orig": "Aurora Venturini",
+      "date_finished": "2026-03",
+      "rating": 8,
+      "tags": [
+        "文学",
+        "阿根廷文学",
+        "女性",
+        "成长"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962426"
+    },
+    {
+      "id": "5b2ed6db",
+      "type": "book",
+      "title_cn": "世界电影史",
+      "title_orig": "Film History: An Introduction",
+      "creator": "大卫·波德维尔 / 克里斯汀·汤普森",
+      "creator_orig": "David Bordwell / Kristin Thompson",
+      "date_finished": "2026-04",
+      "rating": null,
+      "tags": [
+        "电影",
+        "历史",
+        "学术"
+      ],
+      "status": "reading",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962431"
+    },
+    {
+      "id": "aba3c8e2",
+      "type": "book",
+      "title_cn": "百年孤独",
+      "title_orig": "Cien años de soledad",
+      "creator": "加西亚·马尔克斯",
+      "creator_orig": "Gabriel García Márquez",
+      "date_finished": "",
+      "rating": 10,
+      "tags": [
+        "文学",
+        "拉美文学",
+        "魔幻现实",
+        "历史"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962435"
+    },
+    {
+      "id": "7b24f6e1",
+      "type": "book",
+      "title_cn": "红楼梦",
+      "title_orig": "",
+      "creator": "曹雪芹",
+      "creator_orig": "",
+      "date_finished": "",
+      "rating": 10,
+      "tags": [
+        "文学",
+        "中国古典文学",
+        "美学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962439"
+    },
+    {
+      "id": "8bf7369c",
+      "type": "book",
+      "title_cn": "都柏林人",
+      "title_orig": "Dubliners",
+      "creator": "詹姆斯·乔伊斯",
+      "creator_orig": "James Joyce",
+      "date_finished": "",
+      "rating": null,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "爱尔兰文学"
+      ],
+      "status": "to-read",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962442"
+    },
+    {
+      "id": "51ce4fe8",
+      "type": "book",
+      "title_cn": "梦中的欢乐葬礼和十二个异乡故事",
+      "title_orig": "Strange Pilgrims",
+      "creator": "加西亚·马尔克斯",
+      "creator_orig": "Gabriel García Márquez",
+      "date_finished": "",
+      "rating": null,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "拉美文学",
+        "魔幻现实"
+      ],
+      "status": "to-read",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962447"
+    },
+    {
+      "id": "eecdf97a",
+      "type": "book",
+      "title_cn": "王尔德奇异故事集",
+      "title_orig": "The Complete Short Stories",
+      "creator": "奥斯卡·王尔德",
+      "creator_orig": "Oscar Wilde",
+      "date_finished": "",
+      "rating": null,
+      "tags": [
+        "文学",
+        "中短篇小说",
+        "英国文学"
+      ],
+      "status": "to-read",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962451"
+    },
+    {
+      "id": "68b42232",
+      "type": "book",
+      "title_cn": "公羊的节日",
+      "title_orig": "La fiesta del chivo",
+      "creator": "马里奥·巴尔加斯·略萨",
+      "creator_orig": "Mario Vargas Llosa",
+      "date_finished": "",
+      "rating": null,
+      "tags": [
+        "文学",
+        "拉美文学",
+        "政治"
+      ],
+      "status": "to-read",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962454"
+    },
+    {
+      "id": "52a23f01",
+      "type": "movie",
+      "title_cn": "霸王别姬",
+      "title_orig": "Farewell My Concubine",
+      "creator": "陈凯歌",
+      "creator_orig": "Chen Kaige",
+      "date_finished": "2025-02",
+      "rating": 10,
+      "tags": [
+        "剧情",
+        "历史",
+        "中国",
+        "美",
+        "痛苦"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962459"
+    },
+    {
+      "id": "330ce8c8",
+      "type": "movie",
+      "title_cn": "星际穿越",
+      "title_orig": "Interstellar",
+      "creator": "克里斯托弗·诺兰",
+      "creator_orig": "Christopher Nolan",
+      "date_finished": "",
+      "rating": 9,
+      "tags": [
+        "科幻",
+        "时间",
+        "爱"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962464"
+    },
+    {
+      "id": "2c33f9e9",
+      "type": "movie",
+      "title_cn": "奥本海默",
+      "title_orig": "Oppenheimer",
+      "creator": "克里斯托弗·诺兰",
+      "creator_orig": "Christopher Nolan",
+      "date_finished": "",
+      "rating": 9,
+      "tags": [
+        "传记",
+        "历史",
+        "毁灭",
+        "挣扎"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962468"
+    },
+    {
+      "id": "3dd07dbe",
+      "type": "movie",
+      "title_cn": "好东西",
+      "title_orig": "Her Story",
+      "creator": "邵艺辉",
+      "creator_orig": "Shao Yihui",
+      "date_finished": "2025-01",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "女性",
+        "中国",
+        "当代"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962474"
+    },
+    {
+      "id": "d85f8fbb",
+      "type": "movie",
+      "title_cn": "东京教父",
+      "title_orig": "Tokyo Godfathers",
+      "creator": "今敏",
+      "creator_orig": "Satoshi Kon",
+      "date_finished": "2025-02",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "日本",
+        "圣诞",
+        "社会"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962478"
+    },
+    {
+      "id": "acf1688b",
+      "type": "movie",
+      "title_cn": "千年女优",
+      "title_orig": "Millennium Actress",
+      "creator": "今敏",
+      "creator_orig": "Satoshi Kon",
+      "date_finished": "2025-02",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "日本",
+        "爱情",
+        "记忆"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962481"
+    },
+    {
+      "id": "791a147b",
+      "type": "movie",
+      "title_cn": "未麻的部屋",
+      "title_orig": "Perfect Blue",
+      "creator": "今敏",
+      "creator_orig": "Satoshi Kon",
+      "date_finished": "2025-02",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "日本",
+        "悬疑",
+        "心理"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962484"
+    },
+    {
+      "id": "817a595b",
+      "type": "movie",
+      "title_cn": "红辣椒",
+      "title_orig": "Paprika",
+      "creator": "今敏",
+      "creator_orig": "Satoshi Kon",
+      "date_finished": "2025-02",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "日本",
+        "科幻",
+        "梦境"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962489"
+    },
+    {
+      "id": "0fbd45a8",
+      "type": "movie",
+      "title_cn": "卧虎藏龙",
+      "title_orig": "Crouching Tiger, Hidden Dragon",
+      "creator": "李安",
+      "creator_orig": "Ang Lee",
+      "date_finished": "2025-02",
+      "rating": 9,
+      "tags": [
+        "武侠",
+        "中国",
+        "爱情"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962492"
+    },
+    {
+      "id": "86321cda",
+      "type": "movie",
+      "title_cn": "黑客帝国",
+      "title_orig": "The Matrix",
+      "creator": "沃卓斯基姐妹",
+      "creator_orig": "The Wachowskis",
+      "date_finished": "2025-02",
+      "rating": 9,
+      "tags": [
+        "科幻",
+        "动作",
+        "哲学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962496"
+    },
+    {
+      "id": "643bf1ec",
+      "type": "movie",
+      "title_cn": "拾荒者统治",
+      "title_orig": "Scavengers Reign",
+      "creator": "Joseph Bennett",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "科幻",
+        "生存",
+        "生态"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962499"
+    },
+    {
+      "id": "c47f8088",
+      "type": "movie",
+      "title_cn": "初步举证",
+      "title_orig": "Prima Facie",
+      "creator": "",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "女性主义",
+        "法律",
+        "英国"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962503"
+    },
+    {
+      "id": "25316ea7",
+      "type": "movie",
+      "title_cn": "还有明天",
+      "title_orig": "C'è ancora domani",
+      "creator": "宝拉·柯特莱西",
+      "creator_orig": "Paola Cortellesi",
+      "date_finished": "2025-03",
+      "rating": 9,
+      "tags": [
+        "剧情",
+        "女性主义",
+        "意大利",
+        "历史"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962507"
+    },
+    {
+      "id": "98138348",
+      "type": "movie",
+      "title_cn": "苦尽柑来遇见你",
+      "title_orig": "",
+      "creator": "",
+      "creator_orig": "",
+      "date_finished": "2025-03",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "韩国",
+        "时代"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962510"
+    },
+    {
+      "id": "ed9c4250",
+      "type": "movie",
+      "title_cn": "野马",
+      "title_orig": "Mustang",
+      "creator": "蒂尼斯·艾葛温",
+      "creator_orig": "Deniz Gamze Ergüven",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "女性",
+        "土耳其",
+        "成长"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962513"
+    },
+    {
+      "id": "8dd97c28",
+      "type": "movie",
+      "title_cn": "一次别离",
+      "title_orig": "جدایی نادر از سیمین",
+      "creator": "阿斯哈·法哈蒂",
+      "creator_orig": "Asghar Farhadi",
+      "date_finished": "2025-04",
+      "rating": 9,
+      "tags": [
+        "剧情",
+        "伊朗",
+        "家庭",
+        "社会"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962516"
+    },
+    {
+      "id": "b3b72d0e",
+      "type": "movie",
+      "title_cn": "出租车",
+      "title_orig": "تاکسی",
+      "creator": "贾法尔·帕纳西",
+      "creator_orig": "Jafar Panahi",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "伊朗",
+        "纪录片"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962519"
+    },
+    {
+      "id": "510a791c",
+      "type": "movie",
+      "title_cn": "布达佩斯大饭店",
+      "title_orig": "The Grand Budapest Hotel",
+      "creator": "韦斯·安德森",
+      "creator_orig": "Wes Anderson",
+      "date_finished": "2025-04",
+      "rating": 9,
+      "tags": [
+        "喜剧",
+        "美学",
+        "欧洲"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962524"
+    },
+    {
+      "id": "c51de439",
+      "type": "movie",
+      "title_cn": "我在伊朗长大",
+      "title_orig": "Persepolis",
+      "creator": "玛嘉·莎塔琵",
+      "creator_orig": "Marjane Satrapi",
+      "date_finished": "2025-04",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "自传",
+        "伊朗",
+        "女性"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962528"
+    },
+    {
+      "id": "6077106d",
+      "type": "movie",
+      "title_cn": "月升王国",
+      "title_orig": "Moonrise Kingdom",
+      "creator": "韦斯·安德森",
+      "creator_orig": "Wes Anderson",
+      "date_finished": "2025-04",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "成长",
+        "美学"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962531"
+    },
+    {
+      "id": "0a216eb1",
+      "type": "movie",
+      "title_cn": "一一",
+      "title_orig": "Yi Yi",
+      "creator": "杨德昌",
+      "creator_orig": "Edward Yang",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "剧情",
+        "家庭",
+        "中国台湾",
+        "生活"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962534"
+    },
+    {
+      "id": "b2738330",
+      "type": "movie",
+      "title_cn": "冬冬的假期",
+      "title_orig": "",
+      "creator": "侯孝贤",
+      "creator_orig": "Hou Hsiao-hsien",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "成长",
+        "中国台湾"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962537"
+    },
+    {
+      "id": "c0ceaddd",
+      "type": "movie",
+      "title_cn": "哈尔的移动城堡",
+      "title_orig": "Howl's Moving Castle",
+      "creator": "宫崎骏",
+      "creator_orig": "Hayao Miyazaki",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "日本",
+        "奇幻",
+        "反战"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962541"
+    },
+    {
+      "id": "a3b312a3",
+      "type": "movie",
+      "title_cn": "幽灵公主",
+      "title_orig": "Princess Mononoke",
+      "creator": "宫崎骏",
+      "creator_orig": "Hayao Miyazaki",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "动画",
+        "日本",
+        "自然",
+        "史诗"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962545"
+    },
+    {
+      "id": "b74bb308",
+      "type": "movie",
+      "title_cn": "悲情城市",
+      "title_orig": "A City of Sadness",
+      "creator": "侯孝贤",
+      "creator_orig": "Hou Hsiao-hsien",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "剧情",
+        "历史",
+        "中国台湾"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962548"
+    },
+    {
+      "id": "77b68412",
+      "type": "movie",
+      "title_cn": "海上花",
+      "title_orig": "Flowers of Shanghai",
+      "creator": "侯孝贤",
+      "creator_orig": "Hou Hsiao-hsien",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "历史",
+        "中国台湾"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962551"
+    },
+    {
+      "id": "02371232",
+      "type": "movie",
+      "title_cn": "牯岭街少年杀人事件",
+      "title_orig": "A Brighter Summer Day",
+      "creator": "杨德昌",
+      "creator_orig": "Edward Yang",
+      "date_finished": "2025-05",
+      "rating": 9,
+      "tags": [
+        "剧情",
+        "成长",
+        "中国台湾",
+        "历史"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962555"
+    },
+    {
+      "id": "f65eafcb",
+      "type": "movie",
+      "title_cn": "童年往事",
+      "title_orig": "The Time to Live and the Time to Die",
+      "creator": "侯孝贤",
+      "creator_orig": "Hou Hsiao-hsien",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "自传",
+        "中国台湾"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962560"
+    },
+    {
+      "id": "148e6239",
+      "type": "movie",
+      "title_cn": "棋魂",
+      "title_orig": "Hikaru no Go",
+      "creator": "",
+      "creator_orig": "",
+      "date_finished": "2025-05",
+      "rating": 8,
+      "tags": [
+        "动漫",
+        "围棋",
+        "成长",
+        "日本"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962563"
+    },
+    {
+      "id": "7803f2bc",
+      "type": "movie",
+      "title_cn": "法式火锅",
+      "title_orig": "La Passion de Dodin Bouffant",
+      "creator": "陈英雄",
+      "creator_orig": "Trần Anh Hùng",
+      "date_finished": "2025-07",
+      "rating": 8,
+      "tags": [
+        "剧情",
+        "美食",
+        "法国",
+        "历史"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962566"
+    },
+    {
+      "id": "3e18f07e",
+      "type": "movie",
+      "title_cn": "小森林",
+      "title_orig": "Little Forest",
+      "creator": "森淳一",
+      "creator_orig": "Junichi Mori",
+      "date_finished": "2025-11",
+      "rating": 9,
+      "tags": [
+        "剧情",
+        "美食",
+        "日本",
+        "自然",
+        "治愈"
+      ],
+      "status": "finished",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962569"
+    },
+    {
+      "id": "56ee7136",
+      "type": "music",
+      "title_cn": "喜欢的歌",
+      "title_orig": "",
+      "creator": "",
+      "creator_orig": "",
+      "date_finished": "2025-02",
+      "rating": null,
+      "tags": [
+        "音乐",
+        "收藏"
+      ],
+      "status": "collecting",
+      "notes": "",
+      "cover_image": "",
+      "source": "",
+      "created_at": "2026-06-06T17:44:59.962574"
+    }
+  ],
+  "updated_at": "2026-06-07T16:31:36.939607"
+}
