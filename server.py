@@ -352,8 +352,9 @@ def api_search_cover():
 
 # ── Main ────────────────────────────────────────────────────
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5090))
     print("=" * 60)
     print("  Personal Library Manager")
-    print(f"  Open: http://localhost:5090")
+    print(f"  Open: http://localhost:{port}")
     print("=" * 60)
-    app.run(host="127.0.0.1", port=5090, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=False)
